@@ -14,7 +14,7 @@ export const assets = {
   mongodb: "/assets/mongodb.png",
   right_arrow_white: "/assets/right-arrow-white.png",
   logo: "/assets/logo.png",
-  logo_dark: "/assets/logo_dark.png",
+  logo_dark: "/assets/logo-dark.png",
   mail_icon: "/assets/mail_icon.png",
   mail_icon_dark: "/assets/mail_icon_dark.png",
   download_icon: "/assets/download-icon.png",
@@ -43,7 +43,7 @@ export const workData = [
     title: "Grow The Hoard",
     description: "Java, OpenGL, 2D Maze-Game",
     bgImage: "/grow-the-hoard.png",
-    link: "https://github.sfu.ca/nma96/CMPT276S25_group18",
+    link: "https://github.com/NeoHylde/CMPT276S25_group18-main",
   },
   {
     title: "Check My List (WIP)",
@@ -54,8 +54,8 @@ export const workData = [
   {
     title: "Project Portfolio",
     description: "NextJS, TailwindCSS, Personal Project Portfolio",
-    bgImage: "/mountains.png",
-    link: "https://github.com/NeoHylde/implement-my-idea",
+    bgImage: "/mountains.jpg",
+    link: "https://github.com/NeoHylde/project-portfolio",
   },
   {
     title: "Doom Clone (WIP)",
@@ -71,27 +71,27 @@ export const infoList = [
     icon: "/assets/code-icon.png",
     iconDark: "/assets/code-icon-dark.png",
     title: "Languages",
-    description: "HTML, CSS, JavaScript ReactJS, NextJS, Java, C++/C",
+    description: "Java, C++, JavaScript, Python",
   },
   {
     icon: "/assets/edu-icon.png",
     iconDark: "/assets/edu-icon-dark.png",
     title: "Education",
     description:
-      "Bachelor in Science, Comp Sci Major, Business Minor (3rd Year)",
+      "Bachelor in Science, Majoring in Computing Science (3rd Year)",
   },
   {
     icon: "/assets/project-icon.png",
     iconDark: "/assets/project-icon-dark.png",
     title: "Projects",
-    description: "Built more than 5 projects",
+    description: "Focused heavily on Java, JavaScript, and C++ projects. Specialize in simple Web Apps, and Game Development",
   },
 ];
 
 export const toolsData = [
   "/assets/vscode.png",
-  "/assets/firebase.png",
-  "/assets/mongodb.png",
+  "/assets/postgresql.png",
   "/assets/figma.png",
   "/assets/git.png",
+  "/assets/github.png",
 ];

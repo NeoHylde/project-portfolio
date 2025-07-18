@@ -11,8 +11,8 @@ const Projects = () => {
       <h4 className="text-center mb-2 text-lg font-ovo">My portfolio</h4>
       <h2 className="text-center text-5xl font-ovo">My latest work</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
-        Welcome to my project portfolio! I'm constantly looking for new and
-        challenging projects to work on!
+        Check out some of the things I'm currently/have worked on. I'm constantly looking for new and
+        challenging projects to tackle.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
@@ -34,7 +34,7 @@ const Projects = () => {
 
                   <div className="absolute bottom-4 left-4 right-4 bg-white bg-opacity-90 rounded-md px-4 py-3 flex items-center justify-between">
                     <div>
-                      <h2 className="font-semibold text-sm">{project.title}</h2>
+                      <h2 className="font-semibold text-sm dark:text-black">{project.title}</h2>
                       <p className="text-sm text-gray-600">
                         {project.description}
                       </p>

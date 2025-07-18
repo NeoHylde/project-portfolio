@@ -56,7 +56,7 @@ const Header = () => {
           />
         </a>
         <a
-          href="/NeoH-Resume-June2025.pdf"
+          href="/NeoH-Resume.pdf"
           download
           className="px-10 py-3 border rounded-full border-gray-500 dark:text-black dark:bg-white flex items-center gap-2"
         >
