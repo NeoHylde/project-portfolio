@@ -46,10 +46,10 @@ export const workData = [
     link: "https://github.com/NeoHylde/CMPT276S25_group18-main",
   },
   {
-    title: "Check My List (WIP)",
-    description: "JS, JSON, Chrome Tools, Ingredient Checker",
-    bgImage: "/check-my-list.png",
-    link: "https://github.com/NeoHylde/nutrition_chrome_ext",
+    title: "CodeSnip (WIP)",
+    description: "Python, PyQt5, OpenAI, Code Assistant Snipping Tool",
+    bgImage: "/codesnip.png",
+    link: "https://github.com/NeoHylde/code-assistant",
   },
   {
     title: "Project Portfolio",
