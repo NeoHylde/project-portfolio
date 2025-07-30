@@ -1,5 +1,7 @@
 export const assets = {
   neo_tori: "/assets/neo-tori.png",
+  neo_golf: "/assets/neo-golf.PNG",
+  maggie: "/assets/maggie.png",
   user_image: "/assets/user-image.png",
   code_icon: "/assets/code-icon.png",
   code_icon_dark: "/assets/code-icon-dark.png",
@@ -46,7 +48,7 @@ export const workData = [
     link: "https://github.com/NeoHylde/CMPT276S25_group18-main",
   },
   {
-    title: "CodeSnip (WIP)",
+    title: "CodeSnip",
     description: "Python, PyQt5, OpenAI, Code Assistant Snipping Tool",
     bgImage: "/codesnip.png",
     link: "https://github.com/NeoHylde/code-assistant",

@@ -36,9 +36,16 @@ const Contact = () => {
       id="contact"
       className="w-full px-[12%] py-10 scroll-mt-20 bg-white dark:bg-gray-950"
     >
-      <h4 className="text-center mb-2 text-lg font-ovo ">Connect with me</h4>
-
       <h2 className="text-center text-5xl font-ovo">Get in touch</h2>
+
+      <div className="flex justify-center items-center pt-2 pb-2">
+        <img
+          src={assets.maggie}
+          alt="user"
+          className="w-60 rounded-3xl border"
+        />
+      </div>
+
 
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
         If you have any questions, or just want to get into touch with me feel

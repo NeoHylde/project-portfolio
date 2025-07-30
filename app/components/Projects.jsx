@@ -8,11 +8,9 @@ const Projects = () => {
 
   return (
     <div id="projects" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-ovo">My portfolio</h4>
       <h2 className="text-center text-5xl font-ovo">My latest work</h2>
       <p className="text-center max-w-2xl mx-auto mt-5 mb-12 font-ovo">
-        Check out some of the things I'm currently/have worked on. I'm constantly looking for new and
-        challenging projects to tackle.
+        Check out some of the things I've worked on.
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">

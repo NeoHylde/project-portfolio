@@ -42,4 +42,8 @@
   .hover\:shadow-white:hover {
     box-shadow: 4px 4px 0 #fff;
   }
+
+  .rounded-box {
+    border-radius: 10px;
+  }
 }

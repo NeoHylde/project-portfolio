@@ -55,7 +55,7 @@ const Navbar = () => {
         }`}
       >
         <a href="#top">
-          <img src={assets.logo} alt="" className="w-28 cursor-pointer mr-14" />
+          <img src={assets.logo} alt="" className="w-15 cursor-pointer" />
         </a>
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3

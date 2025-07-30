@@ -3,6 +3,7 @@ import Image from "next/image";
 import { assets } from "../../public/assets";
 import useThemeManager from "./themeManager";
 import { motion } from "motion/react";
+import Dropdown from "./Dropdown.jsx"
 
 const Header = () => {
   const theme = useThemeManager();
@@ -28,8 +29,10 @@ const Header = () => {
         transition={{ duration: 0.8, delay: 0.5 }}
         className="text-3xl sm:text-6xl lg:text-[66px] font-ovo"
       >
-        Full Stack Developer Based in Burnaby
+        Student Developer Based in Burnaby
       </motion.h1>
+
+      
 
       <motion.p
         initial={{ opacity: 0 }}
@@ -39,6 +42,16 @@ const Header = () => {
       >
         I'm a student developer always ready for new experiences and challenges!
       </motion.p>
+
+      <motion.img
+        initial={{ y: -25, opacity: 0 }}
+        whileInView={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        src={assets.neo_tori}
+        alt="user"
+        className="w-60 rounded-3xl border"
+      />
+
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a
           href="#contact"
@@ -55,14 +68,7 @@ const Header = () => {
             className="w-4"
           />
         </a>
-        <a
-          href="/NeoH-Resume.pdf"
-          download
-          className="px-10 py-3 border rounded-full border-gray-500 dark:text-black dark:bg-white flex items-center gap-2"
-        >
-          my resume
-          <img src={assets.download_icon} alt="" className="w-4" />
-        </a>
+          <Dropdown />
       </div>
     </div>
   );

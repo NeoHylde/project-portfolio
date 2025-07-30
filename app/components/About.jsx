@@ -14,9 +14,9 @@ const About = () => {
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
         <div className="w-64 sm:w-80 rounded-3xl max-w-none">
           <img
-            src={assets.neo_tori}
+            src={assets.neo_golf}
             alt="user"
-            className="w-full rounded-3xl"
+            className="w-full rounded-3xl border"
           />
         </div>
         <div className="flex-1">
