@@ -30,14 +30,15 @@ export const assets = {
   menu_white: "/assets/menu-white.png",
   close_black: "/assets/close-black.png",
   close_white: "/assets/close-white.png",
-  web_icon: "/assets/web-icon.png",
-  mobile_icon: "/assets/mobile-icon.png",
-  ui_icon: "/assets/ui-icon.png",
-  graphics_icon: "/assets/graphics-icon.png",
   right_arrow: "/assets/right-arrow.png",
   send_icon: "/assets/send-icon.png",
   right_arrow_bold: "/assets/right-arrow-bold.png",
   right_arrow_bold_dark: "/assets/right-arrow-bold-dark.png",
+  cpp: "/assets/c++.png",
+  java: "/assets/java.png",
+  python: "/assets/Python.png",
+  javascript: "/assets/JavaScript.png",
+  sfu: "/assets/sfu.png"
 };
 
 export const workData = [
@@ -73,20 +74,23 @@ export const infoList = [
     icon: "/assets/code-icon.png",
     iconDark: "/assets/code-icon-dark.png",
     title: "Languages",
-    description: "Java, C++, JavaScript, Python",
+    description: "",
+    imgs: [assets.java, assets.cpp, assets.python, assets.javascript],
   },
   {
     icon: "/assets/edu-icon.png",
     iconDark: "/assets/edu-icon-dark.png",
     title: "Education",
     description:
-      "Bachelor in Science, Majoring in Computing Science (3rd Year)",
+      "Computer Science @ SFU",
+    imgs: [assets.sfu],
   },
   {
     icon: "/assets/project-icon.png",
     iconDark: "/assets/project-icon-dark.png",
     title: "Projects",
-    description: "Focused heavily on Java, JavaScript, and C++ projects. Specialize in simple Web Apps, and Game Development",
+    description: "Python Tool Scripts, Game Engines, Web Scrapers, React Websites",
+    imgs: [],
   },
 ];
 
