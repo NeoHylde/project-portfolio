@@ -30,11 +30,14 @@ const ProjectCarousel = () => {
             {workData.map((project, index) => (
                 <div key={index} className="p-4">
                     <div className="relative rounded-xl overflow-hidden shadow-md group bg-white dark:bg-zinc-900 border">
-                        <div className="p-4">
-                            <h2 className="font-semibold text-lg dark:text-white">{project.title}</h2>
-                            <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                                {project.description}
-                            </p>
+                        <div className="p-4 flex justify-between items-start">
+                            <div>
+                                <h2 className="font-semibold text-lg dark:text-white">{project.title}</h2>
+                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                    {project.description}
+                                </p>
+                            </div>
+                            
                             <a
                                 href={project.link}
                                 target="_blank"
@@ -43,18 +46,17 @@ const ProjectCarousel = () => {
                             >
                                 Visit Repo
                             </a>
+                            {/** CHANGE VISIT REPO FOR MOBILE VERSION */}
                         </div>
                         <video
-                        src={project.bgVideo || ""}
-                        width={500}
-                        height={400}
-                        controls
-                        autoPlay
-                        muted
-                        className="w-full h-full"
-                        playsInline
-                        onEnded={handleVideoEnd}
-                        />
+                            src={project.bgVideo || ""}
+                            controls
+                            autoPlay
+                            muted
+                            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
+                            playsInline
+                            onEnded={handleVideoEnd}
+                            />
                     </div>
                 </div>
             ))}

@@ -27,7 +27,7 @@ const About = () => {
             impactful products.
           </p>
           <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
-            {infoList.map(({ icon, iconDark, title, description }, index) => (
+            {infoList.map(({ icon, iconDark, title, description, imgs}, index) => (
               <li
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-gray-100 
                 hover:-translate-y-1 duration-500 hover:shadow-black dark:border-white
@@ -42,9 +42,23 @@ const About = () => {
                 <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
                   {title}
                 </h3>
-                <p className="text-gray-600 dark:text-white text-sm">
+                <p className="text-gray-600 dark:text-white text-sm mb-3">
                   {description}
                 </p>
+                {imgs && imgs.length > 0 && (
+                  <div className="flex flex-wrap items-center gap-2">
+                    {imgs.map((imgSrc, i) => (
+                      <img
+                        key={i}
+                        src={imgSrc}
+                        alt=""
+                        className="w-6 h-6 sm:w-8 sm:h-8 object-contain"
+                      />
+                    ))}
+                  </div>
+)}
+
+                
               </li>
             ))}
           </ul>
