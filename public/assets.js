@@ -43,28 +43,28 @@ export const assets = {
 export const workData = [
   {
     title: "Grow The Hoard",
-    description: "Java, OpenGL, 2D Maze-Game",
-    bgImage: "/grow-the-hoard.png",
+    description: "Java, Maven, OpenGL, LDtk, JUnit",
+    bgVideo: "/assets/gamedemo2.mp4",
     link: "https://github.com/NeoHylde/CMPT276S25_group18-main",
   },
   {
     title: "CodeSnip",
-    description: "Python, PyQt5, OpenAI, Code Assistant Snipping Tool",
-    bgImage: "/codesnip.png",
+    description: "Python, PyQt5, OpenAI GPT-4o",
+    bgVideo: "/assets/codesnip-demo.mp4",
     link: "https://github.com/NeoHylde/code-assistant",
   },
   {
-    title: "Project Portfolio",
-    description: "NextJS, TailwindCSS, Personal Project Portfolio",
-    bgImage: "/mountains.jpg",
-    link: "https://github.com/NeoHylde/project-portfolio",
+      title: "Doom Clone (WIP)",
+      description: "C++, OpenGL, gltf, nlohmann::json",
+      bgVideo: "/assets/doom-clone-wip.mp4",
+      link: "https://github.com/NeoHylde/doomclone",
+      
   },
   {
-    title: "Doom Clone (WIP)",
-    description: "C++, OpenGL, Experiment With 3D Model Rendering",
-    bgImage: "/stanford-bunny.png",
-    link: "https://github.com/NeoHylde/doomclone",
-    
+    title: "Hands-Off",
+    description: "Python, Whisper, Porcupine, Spotipy",
+    bgVideo: "/assets/hands-off-demo.mp4",
+    link: "https://github.com/NeoHylde/hands-off",
   }
 ];
 
