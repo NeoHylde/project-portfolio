@@ -34,7 +34,7 @@ const Contact = () => {
   return (
     <div
       id="contact"
-      className="w-full px-[12%] py-10 scroll-mt-20 bg-white dark:bg-gray-950"
+      className="w-full px-[12%] py-10 scroll-mt-20 bg-white dark:bg-[#1e1e1e]"
     >
       <h2 className="text-center text-5xl font-ovo">Get in touch</h2>
 
@@ -58,14 +58,14 @@ const Contact = () => {
             type="text"
             placeholder="Enter your name"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-black dark:text-white"
             name="name"
           />
           <input
             type="email"
             placeholder="Enter your email"
             required
-            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white"
+            className="flex-1 p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white dark:bg-black dark:text-white"
             name="email"
           />
         </div>
@@ -73,7 +73,7 @@ const Contact = () => {
           rows="6"
           placeholder="Enter your message"
           required
-          className="w-full p-3 outline-none border-[0.5px] broder-gray-400 rounded-md bg-white mb-6"
+          className="w-full p-3 outline-none border-[0.5px] border-gray-400 rounded-md bg-white mb-6 dark:bg-black dark:text-white"
           name="message"
         ></textarea>
 

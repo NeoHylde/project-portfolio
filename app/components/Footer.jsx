@@ -26,11 +26,6 @@ const Footer = () => {
             </a>
           </li>
           <li>
-            <a target="_blank" href="https://www.instagram.com/neo_hyldelund/">
-              Instagram
-            </a>
-          </li>
-          <li>
             <a target="_blank" href="https://www.linkedin.com/in/neohylde/">
               LinkedIn
             </a>

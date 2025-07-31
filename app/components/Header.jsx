@@ -55,7 +55,7 @@ const Header = () => {
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-4">
         <a
           href="#contact"
-          className="px-10 py-3 border border-white rounded-full bg-black dark:bg-gray-950 text-white flex items-center gap-2"
+          className="px-10 py-3 border border-white rounded-full dark:bg-[#1e1e1e] bg-[#1e1e1e] text-white flex items-center gap-2"
         >
           contact me
           <img

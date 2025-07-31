@@ -50,7 +50,7 @@ const Navbar = () => {
         className={`w-full fixed px-5 lg:px-8 xl:px-[8%] py-4 flex items-center justify-between z-50
         ${
           isScroll
-            ? "bg-white/70 dark:bg-gray-950 backdrop-blur-md shadow dark:shadow-gray-400"
+            ? "bg-white/70 dark:bg-[#1e1e1e] backdrop-blur-md shadow dark:shadow-gray-400"
             : ""
         }`}
       >
@@ -62,7 +62,7 @@ const Navbar = () => {
           ${
             isScroll
               ? ""
-              : "bg-white/70 dark:bg-gray-950 backdrop-blur-md shadow-md dark:shadow-gray-400 dark:shadow-sm"
+              : "bg-white/70 dark:bg-[#1e1e1e] backdrop-blur-md shadow-md dark:shadow-gray-400 dark:shadow-sm"
           } `}
         >
           <li>
@@ -71,13 +71,13 @@ const Navbar = () => {
             </a>
           </li>
           <li>
-            <a className="font-ovo" href="#about">
-              About
+            <a className="font-ovo" href="#projects">
+              Projects
             </a>
           </li>
           <li>
-            <a className="font-ovo" href="#projects">
-              Projects
+            <a className="font-ovo" href="#about">
+              About
             </a>
           </li>
           <li>

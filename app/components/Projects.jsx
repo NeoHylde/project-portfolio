@@ -17,40 +17,35 @@ const Projects = () => {
         {workData.map((project, index) => (
           <div
             key={index}
-            className="relative rounded-xl overflow-hidden shadow-md group"
+            className="relative rounded-xl overflow-hidden shadow-md group bg-white dark:bg-zinc-900 border"
           >
-            <ul>
-              <li>
-                <a target="_blank" href={project.link}>
-                  <img
-                    src={project.bgImage != "" ? project.bgImage : null}
-                    alt={project.title}
-                    width={500}
-                    height={400}
-                    className="w-full h-64 object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
+            <div className="p-4">
+              <h2 className="font-semibold text-lg dark:text-white">{project.title}</h2>
+              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                {project.description}
+              </p>
 
-                  <div className="absolute bottom-4 left-4 right-4 bg-white bg-opacity-90 rounded-md px-4 py-3 flex items-center justify-between">
-                    <div>
-                      <h2 className="font-semibold text-sm dark:text-black">{project.title}</h2>
-                      <p className="text-sm text-gray-600">
-                        {project.description}
-                      </p>
-                    </div>
-                    <div className="border rounded-full border-black w-9 aspect-square flex items-center justify-center shadow-[2px_2px_0_#000] group-hover:bg-lime-300 transition">
-                      <img
-                        src={assets.send_icon}
-                        alt="send icon"
-                        className="w-4 h-4"
-                      />
-                    </div>
-                  </div>
-                </a>
-              </li>
-            </ul>
+              <a
+              href={project.link}
+              target="_blank"
+              className=" right-4 bg-white text-black px-4 py-2 text-sm rounded-full border border-black shadow-[2px_2px_0_#000] hover:bg-lime-300 transition"
+            >
+              Visit Repo
+            </a>
+            </div>
+
+            <video
+              src={project.bgVideo || ""}
+              width={500}
+              height={400}
+              controls
+              className="w-full h-50"
+              playsInline
+            />
           </div>
         ))}
       </div>
+
       <ul>
         <li>
           <a
