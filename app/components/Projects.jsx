@@ -2,6 +2,8 @@ import { assets, workData } from "../../public/assets";
 import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import useThemeManager from "./themeManager";
+import ProjectCarousel from "./ProjectCarousel"
+
 
 const Projects = () => {
   const theme = useThemeManager();
@@ -13,38 +15,7 @@ const Projects = () => {
         Check out some of the things I've worked on.
       </p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
-        {workData.map((project, index) => (
-          <div
-            key={index}
-            className="relative rounded-xl overflow-hidden shadow-md group bg-white dark:bg-zinc-900 border"
-          >
-            <div className="p-4">
-              <h2 className="font-semibold text-lg dark:text-white">{project.title}</h2>
-              <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
-                {project.description}
-              </p>
-
-              <a
-              href={project.link}
-              target="_blank"
-              className=" right-4 bg-white text-black px-4 py-2 text-sm rounded-full border border-black shadow-[2px_2px_0_#000] hover:bg-lime-300 transition"
-            >
-              Visit Repo
-            </a>
-            </div>
-
-            <video
-              src={project.bgVideo || ""}
-              width={500}
-              height={400}
-              controls
-              className="w-full h-50"
-              playsInline
-            />
-          </div>
-        ))}
-      </div>
+      <ProjectCarousel />
 
       <ul>
         <li>
