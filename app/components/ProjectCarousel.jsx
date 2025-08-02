@@ -20,7 +20,7 @@ const ProjectCarousel = () => {
             const videos = document.querySelectorAll('.slick-slide video');
             videos.forEach(video => {
                 if (!video.paused) {
-                    video.pause();
+                video.pause();
                 }
             });
         }
@@ -56,14 +56,14 @@ const ProjectCarousel = () => {
                             </a>
                         </div>
                         <video
+                            poster={project.img}
                             src={project.bgVideo || ""}
                             controls
-                            autoPlay
                             muted
                             className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                             playsInline
                             onEnded={handleVideoEnd}
-                            />
+                        />
                     </div>
                 </div>
             ))}
