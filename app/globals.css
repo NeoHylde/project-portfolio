@@ -47,3 +47,12 @@
     border-radius: 10px;
   }
 }
+
+.dark .slick-dots li button:before {
+    color: white;
+}
+
+.dark .slick-dots li.slick-active button:before {
+    color: white;
+}
+
