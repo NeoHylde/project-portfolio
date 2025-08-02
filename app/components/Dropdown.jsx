@@ -24,16 +24,6 @@ export default function Dropdown() {
                     my resume
                     <FaCaretDown className="ml-1" />
                 </button>
-
-                {/* Small preview icon to the right */}
-                <a
-                    href={'/NeoH-SDE-Resume.pdf'}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="ml-2 w-8 h-8 flex items-center justify-center border border-black rounded-full bg-white dark:text-black hover:bg-gray-100 transition-colors"
-                >
-                    <img src={assets.right_arrow_bold} alt="Send icon" className="w-4 h-4" />
-                </a>
             </div>
 
             {/* Dropdown menu */}
@@ -44,8 +34,9 @@ export default function Dropdown() {
                             <a
                                 key={index}
                                 href={link}
+                                target="_blank"
+                                rel="noopener noreferrer"
                                 className="flex items-center justify-between px-4 py-2 text-sm text-black hover:bg-gray-100"
-                                download
                                 onClick={toggleDropdown}
                             >
                                 {name}
