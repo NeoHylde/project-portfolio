@@ -50,13 +50,13 @@ export const workData = [
   },
   {
     title: "CodeSnip",
-    description: "Python, PyQt5, OpenAI GPT-4o",
+    description: "Python, PyQt5, openai gpt-4o",
     bgVideo: "/assets/codesnip-demo.mp4",
     link: "https://github.com/NeoHylde/code-assistant",
   },
   {
       title: "Doom Clone (WIP)",
-      description: "C++, OpenGL, gltf, nlohmann::json",
+      description: "C++, OpenGL, GLM, gltf, nlohmann::json",
       bgVideo: "/assets/doom-clone-wip.mp4",
       link: "https://github.com/NeoHylde/doomclone",
       
@@ -69,7 +69,7 @@ export const workData = [
   },
   {
     title: "Globe Conflict Mapper (WIP)",
-    description: "ThreeJS, Python, Hugging Face, Url lib",
+    description: "Javascript, Python, ThreeJS, Flask, Hugging Face, Url lib",
     bgVideo: "/assets/earth-demo.mp4",
     link: "https://github.com/NeoHylde/hands-off",
   }
