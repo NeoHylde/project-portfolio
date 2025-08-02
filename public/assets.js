@@ -66,6 +66,12 @@ export const workData = [
     description: "Python, Whisper, Porcupine, Spotipy",
     bgVideo: "/assets/hands-off-demo.mp4",
     link: "https://github.com/NeoHylde/hands-off",
+  },
+  {
+    title: "Globe Conflict Mapper (WIP)",
+    description: "ThreeJS, Python, Hugging Face, Url lib",
+    bgVideo: "/assets/earth-demo.mp4",
+    link: "https://github.com/NeoHylde/hands-off",
   }
 ];
 
