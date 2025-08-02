@@ -46,18 +46,21 @@ export const workData = [
     title: "Grow The Hoard",
     description: "Java, Maven, OpenGL, LDtk, JUnit",
     bgVideo: "/assets/gamedemo2.mp4",
+    img: "/assets/gth-img.png",
     link: "https://github.com/NeoHylde/CMPT276S25_group18-main",
   },
   {
     title: "CodeSnip",
     description: "Python, PyQt5, openai gpt-4o",
     bgVideo: "/assets/codesnip-demo.mp4",
+    img: "/assets/codesnip.png",
     link: "https://github.com/NeoHylde/code-assistant",
   },
   {
       title: "Doom Clone (WIP)",
       description: "C++, OpenGL, GLM, gltf, nlohmann::json",
       bgVideo: "/assets/doom-clone-wip.mp4",
+      img: "/assets/stanford-bunny.png",
       link: "https://github.com/NeoHylde/doomclone",
       
   },
@@ -65,12 +68,14 @@ export const workData = [
     title: "Hands-Off",
     description: "Python, Whisper, Porcupine, Spotipy",
     bgVideo: "/assets/hands-off-demo.mp4",
+    img: "assets/hands-off-img.png",
     link: "https://github.com/NeoHylde/hands-off",
   },
   {
     title: "Globe Conflict Mapper (WIP)",
     description: "Javascript, Python, ThreeJS, Flask, Hugging Face, Url lib",
     bgVideo: "/assets/earth-demo.mp4",
+    img: "/assets/earth-img.png",
     link: "https://github.com/NeoHylde/hands-off",
   }
 ];
