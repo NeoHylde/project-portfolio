@@ -1,5 +1,5 @@
 import { assets, workData } from "../../public/assets";
-import React, { useRef } from 'react'
+import React, { useRef} from 'react';
 import useThemeManager from "./themeManager";
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -15,7 +15,15 @@ const ProjectCarousel = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: true,
+        arrows: false,
+        afterChange: () => {
+            const videos = document.querySelectorAll('.slick-slide video');
+            videos.forEach(video => {
+                if (!video.paused) {
+                    video.pause();
+                }
+            });
+        }
     };
 
     const handleVideoEnd = () => {
@@ -32,8 +40,8 @@ const ProjectCarousel = () => {
                     <div className="relative rounded-xl overflow-hidden shadow-md group bg-white dark:bg-zinc-900 border">
                         <div className="p-4 flex justify-between items-start">
                             <div>
-                                <h2 className="font-semibold text-lg dark:text-white">{project.title}</h2>
-                                <p className="text-sm text-gray-600 dark:text-gray-300 mb-4">
+                                <h2 className="font-mono font-semibold text-lg dark:text-white">{project.title}</h2>
+                                <p className="font-mono text-sm text-gray-600 dark:text-gray-300 mb-4">
                                     {project.description}
                                 </p>
                             </div>
@@ -42,11 +50,10 @@ const ProjectCarousel = () => {
                                 href={project.link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="bg-white text-black px-4 py-2 text-sm rounded-full border border-black shadow-[2px_2px_0_#000] hover:bg-lime-300 transition"
+                                className="font-mono bg-white text-black px-4 py-2 text-sm sm: rounded-full border border-black shadow-[2px_2px_0_#000] hover:bg-lime-300 transition"
                             >
-                                Visit Repo
+                               <img src={"/assets/github.png"} className="w-5 sm:w-7"/>
                             </a>
-                            {/** CHANGE VISIT REPO FOR MOBILE VERSION */}
                         </div>
                         <video
                             src={project.bgVideo || ""}
