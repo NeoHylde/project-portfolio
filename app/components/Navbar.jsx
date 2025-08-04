@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState, useLayoutEffect } from "react";
 import { assets } from "../../public/assets";
 import Image from "next/image";
+import { InteractiveImage } from "./SpinningImage";
 
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
@@ -54,9 +55,13 @@ const Navbar = () => {
             : ""
         }`}
       >
-        <a href="#top">
-          <img src={assets.logo} alt="" className="w-15 cursor-pointer" />
-        </a>
+        
+          <div className="block w-14 h-14">
+            <InteractiveImage />
+          </div>
+
+
+
         <ul
           className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
           ${

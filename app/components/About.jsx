@@ -17,7 +17,7 @@ const About = () => {
             src={assets.neo_golf}
             alt="user"
             className="w-full rounded-3xl border"
-          />
+          /> 
         </div>
         <div className="flex-1">
           <p className="mb-10 max-w-2xl font-ovo">
