@@ -56,3 +56,21 @@
     color: white;
 }
 
+.animate-gradient {
+  background: linear-gradient(135deg, #ff6a00, #ee0979, #ff6a00);
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  animation: gradient 2s ease infinite;
+}
+
+@keyframes gradient {
+  0%, 
+  100% {
+    background-position: 0% 0%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+}
