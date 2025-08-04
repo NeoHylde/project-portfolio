@@ -6,6 +6,13 @@ import { InteractiveImage } from "./SpinningImage";
 const Navbar = () => {
   const [isScroll, setIsScroll] = useState(false);
   const [theme, setTheme] = useState("");
+  const [showSpinText, setShowSpinText] = useState(true);
+
+  const handleSpin = () => {
+    if (showSpinText) setShowSpinText(false);
+  };
+
+
 
   useLayoutEffect(() => {
     const stored = localStorage.theme;
@@ -57,10 +64,13 @@ const Navbar = () => {
       >
         <div className="flex items-center gap-2">
           <div className="w-12 h-12">
-            <InteractiveImage />
+            <InteractiveImage onSpin={handleSpin}/>
+          </div> {showSpinText && (          
+            <span className="text-sm font-mono animate-gradient whitespace-nowrap">
+              spin me
+            </span>
+            )}
           </div>
-          <span className="text-sm font-mono animate-gradient whitespace-nowrap">spin me</span>
-        </div>
 
 
 
