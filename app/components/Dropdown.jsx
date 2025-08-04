@@ -19,7 +19,7 @@ export default function Dropdown() {
             <div className="relative flex items-center">
                 <button
                     onClick={toggleDropdown}
-                    className="px-10 py-3 border rounded-full border-black dark:text-black dark:bg-white flex items-center gap-2 cursor-pointer"
+                    className="px-10 py-3 border rounded-full border-black dark:text-black dark:bg-white flex items-center gap-2 cursor-pointer font-mono"
                 >
                     my resume
                     <FaCaretDown className="ml-1" />

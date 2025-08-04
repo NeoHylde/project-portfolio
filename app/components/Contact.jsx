@@ -79,7 +79,7 @@ const Contact = () => {
 
         <button
           type="submit"
-          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white dark:bg-gray-300 dark:text-black dark:hover:bg-white rounded-full mx-auto hover:bg-black duration-500"
+          className="py-3 px-8 w-max flex items-center justify-between gap-2 bg-black/80 text-white dark:bg-white dark:text-black dark:hover:bg-gray-300 rounded-full mx-auto hover:bg-black duration-500 font-mono"
         >
           Submit{" "}
           <img

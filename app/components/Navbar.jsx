@@ -55,42 +55,46 @@ const Navbar = () => {
             : ""
         }`}
       >
-        
-          <div className="block w-14 h-14">
+        <div className="flex items-center gap-2">
+          <div className="w-12 h-12">
             <InteractiveImage />
           </div>
+          <span className="text-sm font-mono animate-gradient whitespace-nowrap">spin me</span>
+        </div>
 
 
 
-        <ul
-          className={`hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
-          ${
-            isScroll
-              ? ""
-              : "bg-white/70 dark:bg-[#1e1e1e] backdrop-blur-md shadow-md dark:shadow-gray-400 dark:shadow-sm"
-          } `}
-        >
-          <li>
-            <a className="font-ovo" href="#top">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#projects">
-              Projects
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#about">
-              About
-            </a>
-          </li>
-          <li>
-            <a className="font-ovo" href="#contact">
-              Contact
-            </a>
-          </li>
-        </ul>
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <ul
+            className={`mr-7 hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
+            ${
+              isScroll
+                ? ""
+                : "bg-white/70 dark:bg-[#1e1e1e] backdrop-blur-md shadow-md dark:shadow-gray-400 dark:shadow-sm"
+            } `}
+          >
+            <li>
+              <a className="font-mono" href="#top">
+                Home
+              </a>
+            </li>
+            <li>
+              <a className="font-mono" href="#projects">
+                Projects
+              </a>
+            </li>
+            <li>
+              <a className="font-mono" href="#about">
+                About
+              </a>
+            </li>
+            <li>
+              <a className="font-mono" href="#contact">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </div>
 
         <div className="flex items-center gap-4">
           <button onClick={toggleDarkMode}>

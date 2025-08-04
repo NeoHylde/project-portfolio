@@ -24,7 +24,7 @@ const Projects = () => {
             href="https://github.com/NeoHylde"
             className="w-max flex items-center justify-center gap-2
          text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto
-         my-20 hover:bg-gray-200 duration-500 dark:text-white"
+         my-20 hover:bg-gray-200 dark:hover:bg-black duration-500 dark:text-white font-mono"
           >
             show more{" "}
             <img

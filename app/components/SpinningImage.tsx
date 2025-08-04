@@ -3,7 +3,6 @@ import { Canvas, useFrame } from "@react-three/fiber"
 import { CameraControls, Environment, RoundedBox, useTexture } from "@react-three/drei"
 import React, { Suspense, useRef } from "react"
 import { assets } from "../../public/assets";
-import { scale } from "motion";
 
 type Props = {};
 
