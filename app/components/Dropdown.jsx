@@ -36,7 +36,7 @@ export default function Dropdown() {
                                 href={link}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="flex items-center justify-between px-4 py-2 text-sm text-black hover:bg-gray-100"
+                                className="flex items-center justify-between px-4 py-2 text-sm text-black hover:bg-gray-100 font-mono"
                                 onClick={toggleDropdown}
                             >
                                 {name}

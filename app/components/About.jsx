@@ -1,5 +1,4 @@
 import { assets, infoList, toolsData } from "../../public/assets";
-import Image from "next/image";
 import React, { useState, useEffect } from "react";
 import useThemeManager from "./themeManager";
 
@@ -56,9 +55,7 @@ const About = () => {
                       />
                     ))}
                   </div>
-)}
-
-                
+                )}
               </li>
             ))}
           </ul>
