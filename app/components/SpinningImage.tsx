@@ -8,22 +8,21 @@ type Props = {
   onSpin?: () => void;
 };
 
-export function InteractiveImage({ onSpin }: Props) {
+export function InteractiveImage({}: Props) {
     return (
         <div className="w-full h-full flex items-center justify-center">
             <Canvas 
-                camera={{ position: [0, 0, 0.6], fov: 30 }}
+                camera={{ position: [0, 0, 0.6], fov: 40 }}
             >
                 <Suspense fallback={null} >
-                    <Scene onSpin={onSpin}/>
+                    <Scene />
                 </Suspense>
             </Canvas>
         </div>
     );
 }
 
-
-function Scene({ onSpin }: { onSpin?: () => void }){
+function Scene(){
     return(
         <group>
             <CameraControls 
@@ -34,28 +33,19 @@ function Scene({ onSpin }: { onSpin?: () => void }){
             polarRotateSpeed={0}
             />
             <Environment preset="apartment" />
-            <TexturedBox onSpin={onSpin}/>
+            <TexturedBox />
         </group>
     );
 }
 
-function TexturedBox({ onSpin }: { onSpin?: () => void }) {
+function TexturedBox() {
   const meshRef = useRef(null);
   const texture = useTexture(assets.logo);
   const [lastAngle, setLastAngle] = useState(0)
 
   useFrame(() => {
     if (meshRef.current) {
-      meshRef.current.rotation.y += 0.002;
-
-      const currentAngle = meshRef.current.rotation.y;
-      const delta = Math.abs(currentAngle - lastAngle);
-
-      if(delta > 0.003) {
-        onSpin?.();
-      }
-
-      setLastAngle(currentAngle);
+      meshRef.current.rotation.y += 0.007;
     }
   });
 
@@ -63,7 +53,7 @@ function TexturedBox({ onSpin }: { onSpin?: () => void }) {
   texture.flipY = true;
 
   const image = texture.image;
-  if (!image) return null;
+  //if (!image) return null;
 
   const aspectRatio = image.width / image.height;
   const baseHeight = 1;
