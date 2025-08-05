@@ -6,9 +6,9 @@ import { assets } from "../../public/assets";
 export default function Dropdown() {
     const [isOpen, setIsOpen] = useState(false);
     const downloads = [
-        ['full stack', '/NeoH-FullStack-Resume.pdf'],
-        ['python/api tools', '/NeoH-Python_API-Resume.pdf'],
-        ['sde', '/NeoH-SDE-Resume.pdf']
+        ['full stack', '/NeoHylde-FS-CV.pdf'],
+        ['python/ api', '/NeoHylde-PY-CV.pdf'],
+        ['software engineer', '/NeoHylde-SD-CV.pdf']
     ];
 
     const toggleDropdown = () => setIsOpen((prev) => !prev);
