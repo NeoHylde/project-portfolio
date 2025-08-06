@@ -64,9 +64,7 @@ const Navbar = () => {
             </span>
         </div>
 
-
-
-        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 font-mono">
           <ul
             className={`mr-7 hidden md:flex items-center gap-6 lg:gap-8 rounded-full px-12 py-3
             ${
@@ -76,22 +74,22 @@ const Navbar = () => {
             } `}
           >
             <li>
-              <a className="font-mono" href="#top">
+              <a href="#top">
                 Home
               </a>
             </li>
             <li>
-              <a className="font-mono" href="#projects">
+              <a href="#projects">
                 Projects
               </a>
             </li>
             <li>
-              <a className="font-mono" href="#about">
+              <a href="#about">
                 About
               </a>
             </li>
             <li>
-              <a className="font-mono" href="#contact">
+              <a href="#contact">
                 Contact
               </a>
             </li>
@@ -123,7 +121,7 @@ const Navbar = () => {
           className="flex md:hidden flex-col gap-4 py-20 px-10 fixed
           -right-64 top-0 bottom-0 w-45 z-50 h-screen 
           bg-white dark:bg-zinc-900 text-black dark:text-white
-            transition duration-500"
+            transition duration-500 font-mono"
         >
           <div className="absolute right-6 top-6" onClick={closeMenu}>
             <img
@@ -133,22 +131,22 @@ const Navbar = () => {
             />
           </div>
           <li>
-            <a className="font-ovo" href="#top" onClick={closeMenu}>
+            <a href="#top" onClick={closeMenu}>
               Home
             </a>
           </li>
           <li>
-            <a className="font-ovo" href="#projects" onClick={closeMenu}>
+            <a href="#projects" onClick={closeMenu}>
               Projects
             </a>
           </li>
           <li>
-            <a className="font-ovo" href="#about" onClick={closeMenu}>
+            <a href="#about" onClick={closeMenu}>
               About
             </a>
           </li>
           <li>
-            <a className="font-ovo" href="#contact" onClick={closeMenu}>
+            <a href="#contact" onClick={closeMenu}>
               Contact
             </a>
           </li>
