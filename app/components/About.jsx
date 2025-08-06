@@ -38,7 +38,7 @@ const About = () => {
                   alt={title}
                   className="w-7 mt-3"
                 />
-                <h3 className="my-4 font-semibold text-gray-700 dark:text-white">
+                <h3 className="my-4 font-semibold text-gray-700 dark:text-white font-mono">
                   {title}
                 </h3>
                 <p className="text-gray-600 dark:text-white text-sm mb-3">

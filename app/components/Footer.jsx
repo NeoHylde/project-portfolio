@@ -9,7 +9,7 @@ const Footer = () => {
 
       <div
         className="text-center sm:flex items-center justify-between border-t
-      border-gray-400 mx-[10%] mt-12 py-6"
+      border-gray-400 mx-[10%] mt-12 py-6 font-mono"
       >
         <p>© 2025 Neo Hyldelund. All rights reserved.</p>
         <div className="flex items-center">
@@ -19,7 +19,7 @@ const Footer = () => {
           </div>
         </div>
         
-        <ul className="flex items-center gap-10 justify-center mt-3 sm:mt-0">
+        <ul className="flex items-center gap-10 justify-center mt-3 sm:mt-0 font-mono">
           <li>
             <a target="_blank" href="https://github.com/NeoHylde">
               Github
