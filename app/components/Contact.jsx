@@ -1,10 +1,11 @@
 import { assets } from "../../public/assets";
-import Image from "next/image";
 import React, { useState } from "react";
 import useThemeManager from "./themeManager";
 
+
 const Contact = () => {
   const [result, setResult] = useState("");
+  const apiKey = process.env.NEXT_PUBLIC_API_KEY;
 
   const theme = useThemeManager();
 
@@ -13,7 +14,7 @@ const Contact = () => {
     setResult("Sending....");
     const formData = new FormData(event.target);
 
-    formData.append("access_key", "c1222ab1-2d3b-4597-895f-dbfc900692af");
+    formData.append("access_key", apiKey);
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -36,7 +37,7 @@ const Contact = () => {
       id="contact"
       className="w-full px-[12%] py-10 scroll-mt-20 bg-white dark:bg-[#1e1e1e]"
     >
-      <h2 className="text-center text-5xl font-ovo">Get in touch</h2>
+      <h2 className="text-center text-5xl font-ovo">Get In Touch</h2>
 
       <div className="flex justify-center items-center pt-2 pb-2">
         <img
