@@ -11,7 +11,7 @@ const Header = () => {
   return (
     <div
       className="w-11/12 max-w-3xl text-center mx-auto h-screen flex flex-col
-    items-center justify-center gap-4"
+      items-center justify-center gap-4 pt-10"
     >
       <motion.h3
         initial={{ y: -20, opacity: 0 }}
@@ -31,8 +31,6 @@ const Header = () => {
       >
         Student Developer Based In Vancouver
       </motion.h1>
-
-      
 
       <motion.p
         initial={{ opacity: 0 }}
