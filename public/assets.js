@@ -76,7 +76,7 @@ export const workData = [
     description: "Javascript, Python, ThreeJS, Flask, Hugging Face, Url lib",
     bgVideo: "/assets/earth-demo.mp4",
     img: "/assets/earth-img.png",
-    link: "https://github.com/NeoHylde/hands-off",
+    link: "https://github.com/NeoHylde/earth-threejs",
   }
 ];
 
