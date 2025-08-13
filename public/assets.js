@@ -100,7 +100,7 @@ export const infoList = [
     icon: "/assets/project-icon.png",
     iconDark: "/assets/project-icon-dark.png",
     title: "Projects",
-    description: "Python Tool Scripts, Game Engines, Web Scrapers, React Websites",
+    description: "Work Tools, Games, Scrapers, and Websites",
     imgs: [],
   },
 ];
