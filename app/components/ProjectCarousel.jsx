@@ -15,7 +15,7 @@ const ProjectCarousel = () => {
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
-        arrows: false,
+        arrows: true,
         afterChange: () => {
             const videos = document.querySelectorAll('.slick-slide video');
             videos.forEach(video => {

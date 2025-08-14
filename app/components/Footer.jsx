@@ -9,14 +9,15 @@ const Footer = () => {
 
       <div
         className="text-center sm:flex items-center justify-between border-t
-      border-gray-400 mx-[10%] mt-12 py-6 font-mono"
+      border-gray-400 mx-[10%] mt-12 py-6 font-mono text-xs animate-gradient"
       >
-        <p>© 2025 Neo Hyldelund. All rights reserved.</p>
-        <div className="flex items-center">
-          <img src={assets.mail_icon} alt="" className="w-6 mr-1" />
-          <div className="w-max flex items-center gap02 mx-auto">
+        <p>© 2025 Neo Hyldelund</p>
+
+        <div className="md:flex items-center hidden">
+          <img src={assets.mail_icon} alt="" className="w-4 mr-1" />
+          <p>
             neo.hyldelund@gmail.com
-          </div>
+          </p>
         </div>
         
         <ul className="flex items-center gap-10 justify-center mt-3 sm:mt-0 font-mono">
