@@ -7,8 +7,8 @@ const About = () => {
 
   return (
     <div id="about" className="w-full px-[12%] py-10 scroll-mt-20">
-      <h4 className="text-center mb-2 text-lg font-ovo">Introduction</h4>
-      <h2 className="text-center text-5xl font-ovo">About Me</h2>
+      <h4 className="text-center mb-2 text-lg font-outfit">Introduction</h4>
+      <h2 className="text-center text-5xl font-outfit">About Me</h2>
 
       <div className="flex w-full flex-col lg:flex-row items-center gap-20 my-20">
         <div className="w-64 sm:w-80 rounded-3xl max-w-none">
@@ -19,13 +19,11 @@ const About = () => {
           /> 
         </div>
         <div className="flex-1">
-          <p className="mb-10 max-w-2xl font-ovo">
-            A Computing Science student at SFU passionate about building
-            creative, scalable tech solutions. I enjoy working on useful web
-            applications, and creating fun games. I love turning ideas into
+          <p className="mb-10 max-w-2xl font-outfit">
+            A Computer Science student at SFU. I love turning ideas into
             impactful products.
           </p>
-          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl">
+          <ul className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-2xl font-outfit">
             {infoList.map(({ icon, iconDark, title, description, imgs}, index) => (
               <li
                 className="border-[0.5px] border-gray-400 rounded-xl p-6 cursor-pointer hover:bg-gray-100 
@@ -60,7 +58,7 @@ const About = () => {
             ))}
           </ul>
 
-          <h4 className="my-6 text-gray-700 dark:text-white font-ovo">
+          <h4 className="my-6 text-gray-700 dark:text-white font-mono">
             tools i use
           </h4>
           <ul className="flex items-center gap-3 sm:gap-5">
