@@ -11,11 +11,13 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <Header />
-      <Projects />
-      <About />
-      <Contact />
-      <Footer />
+      <div className="pt-20 sm:pt-24 md:pt-32 space-y-20">
+        <Header />
+        <Projects />
+        <About />
+        <Contact />
+        <Footer />
+      </div>
     </>
   );
 }
