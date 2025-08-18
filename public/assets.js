@@ -38,7 +38,8 @@ export const assets = {
   java: "/assets/java.png",
   python: "/assets/Python.png",
   javascript: "/assets/JavaScript.png",
-  sfu: "/assets/sfu.png"
+  sfu: "/assets/sfu.png",
+  gradient_bg_dark: "/assets/dark-gradient-bg.png"
 };
 
 export const workData = [
