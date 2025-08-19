@@ -39,7 +39,12 @@ export const assets = {
   python: "/assets/Python.png",
   javascript: "/assets/JavaScript.png",
   sfu: "/assets/sfu.png",
-  gradient_bg_dark: "/assets/dark-gradient-bg.png"
+  gradient_bg: "/assets/gradient-bg.png",
+  gradient_bg_dark: "/assets/dark-gradient-bg.png",
+  typescript: "/assets/typescript.png",
+  tailwind: "/assets/tailwind.png",
+  nextjs: "/assets/nextjs.png",
+  threejs: "/assets/threejs.png"
 };
 
 export const workData = [
@@ -112,4 +117,11 @@ export const toolsData = [
   "/assets/figma.png",
   "/assets/git.png",
   "/assets/github.png",
+];
+
+export const builtData = [
+  assets.nextjs,
+  assets.tailwind,
+  assets.typescript,
+  assets.threejs
 ];
