@@ -10,13 +10,13 @@ const Header = () => {
 
   return (
     <div className="flex flex-col items-center gap-4 px-4 sm:px-8"> 
-      <div className="w-full lg:w-2/3 flex md:flex-row flex-col border mx-auto rounded-3xl">
+
+      <div className="w-full lg:w-2/3 flex md:flex-row flex-col border mx-auto rounded-3xl shadow-2xl">
         <img
           src={assets.neo_tori}
           alt="user"
-          className="md:w-[40%] h-auto border-b md:border-r rounded-t-3xl md:rounded-none md:rounded-l-3xl"
+          className="md:w-[40%] h-auto md:border-b-0 border-b md:border-r rounded-t-3xl md:rounded-none md:rounded-l-3xl"
         />
-
 
         <div className="relative flex-1 min-w-0 flex flex-col">
           <img
@@ -55,6 +55,21 @@ const Header = () => {
                Comfortable with APIs, databases, and always focused on clean code and teamwork.
             </motion.p>
 
+            <div className="hidden md:flex flex-col sm:flex-row items-center gap-4 pt-10 mt-auto">
+              <a
+                href="#contact"
+                className="px-10 py-3 border border-white rounded-full dark:bg-[#1e1e1e] bg-[#1e1e1e] text-white flex items-center gap-2 font-mono"
+              >
+                contact
+                <img
+                  src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow_white}
+                  alt=""
+                  className="w-4"
+                />
+              </a>
+              <Dropdown />
+            </div>
+
             <div className="flex flex-col items-center gap-2 pt-10 mt-auto">
               <motion.p
                 initial={{ opacity: 0 }}
@@ -82,12 +97,12 @@ const Header = () => {
         </div>
       </div>
 
-      <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
+      <div className="md:hidden flex flex-col sm:flex-row items-center gap-4 pt-10 mt-auto">
             <a
               href="#contact"
               className="px-10 py-3 border border-white rounded-full dark:bg-[#1e1e1e] bg-[#1e1e1e] text-white flex items-center gap-2 font-mono"
             >
-              contact me
+              contact
               <img
                 src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow_white}
                 alt=""
@@ -95,7 +110,7 @@ const Header = () => {
               />
             </a>
             <Dropdown />
-          </div>
+      </div>
     </div>
   );
 };

@@ -15,13 +15,12 @@ export default function Dropdown() {
 
     return (
         <div className="relative inline-block">
-            {/* Wrap button and icon in flex row */}
             <div className="relative flex items-center">
                 <button
                     onClick={toggleDropdown}
                     className="px-10 py-3 border rounded-full border-black dark:text-black dark:bg-white flex items-center gap-2 cursor-pointer font-mono"
                 >
-                    my resume
+                    resume
                     <FaCaretDown className="ml-1" />
                 </button>
             </div>
