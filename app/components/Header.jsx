@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Image from "next/image";
-import { assets } from "../../public/assets";
+import { assets, builtData } from "../../public/assets";
 import useThemeManager from "./themeManager";
 import { motion } from "motion/react";
 import Dropdown from "./Dropdown.jsx"
@@ -20,12 +20,12 @@ const Header = () => {
 
         <div className="relative flex-1 min-w-0 flex flex-col">
           <img
-            src={assets.gradient_bg_dark}
+            src={theme === "dark" ? assets.gradient_bg_dark : assets.gradient_bg}
             alt="gradient-bg-dark"
-            className="absolute inset-0 w-full h-full object-cover -z-10 rounded-b-3xl md:rounded-r-3xl"
+            className="absolute inset-0 w-full h-full object-cover -z-10 rounded-b-3xl md:rounded-none md:rounded-r-3xl"
           />
 
-          <div className="items-center px-3 pt-5 pb-5 flex flex-col h-full">
+          <div className="items-center text-center px-3 pt-5 pb-5 md:pt-15 flex flex-col h-full">
             <motion.h3
               initial={{ y: -20, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
@@ -40,7 +40,7 @@ const Header = () => {
               initial={{ y: -30, opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.8, delay: 0.5 }}
-              className="text-3xl sm:text-6xl lg:text-[66px] font-outfit"
+              className="text-3xl sm:text-5xl lg:text-[44px] font-outfit"
             >
               Student Developer Based In Vancouver
             </motion.h1>
@@ -49,16 +49,39 @@ const Header = () => {
               initial={{ opacity: 0 }}
               whileInView={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.6, delay: 0.7 }}
-              className="max-w-2xl pt-30 font-outfit hidden md:block"
+              className="max-w-2xl pt-5 font-outfit hidden md:block"
             >
-              Full-stack developer focused on building responsive, 
-              user-centric web applications with Next.js, React, 
-              and Tailwind CSS. Experienced in backend APIs and database integration, 
-              with a strong attention to detail and a collaborative mindset.
-            </motion.p>        
+              Full-stack developer building fast, responsive apps with Next.js, React, and Tailwind CSS.
+               Comfortable with APIs, databases, and always focused on clean code and teamwork.
+            </motion.p>
+
+            <div className="flex flex-col items-center gap-2 pt-10 mt-auto">
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ y: 0, opacity: 1 }}
+                transition={{ duration: 0.6, delay: 0.9 }}
+                className="max-w-2xl mx-auto font-mono"
+              >
+                (built with)
+              </motion.p>
+
+              <ul className="flex items-center gap-3 sm:gap-5 pt-5">
+                {builtData.map((tool, index) => (
+                  <li
+                    className="flex items-center justify-center
+                    w-12 sm:w-12 aspect-square border border-gray-400 rounded-lg cursor-pointer
+                    hover:-translate-y-1 duration-500 bg-white"
+                    key={index}
+                  >
+                    <img src={tool} alt="Tool" className="w-5 sm:w-7 " />
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+
       <div className="flex flex-col sm:flex-row items-center gap-4 mt-auto">
             <a
               href="#contact"
