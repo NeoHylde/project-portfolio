@@ -9,13 +9,13 @@ const Header = () => {
   const theme = useThemeManager();
 
   return (
-    <div className="flex flex-col items-center gap-4 px-4 sm:px-8"> 
+    <div className="flex flex-col items-center gap-4 md:px-4 sm:px-8"> 
 
-      <div className="w-full lg:w-2/3 flex md:flex-row flex-col border mx-auto rounded-3xl shadow-2xl">
+      <div className="w-full xl:w-2/3 lg:w-4/5 flex md:flex-row flex-col border mx-auto rounded-3xl shadow-2xl">
         <img
           src={assets.neo_tori}
           alt="user"
-          className="md:w-[40%] h-auto md:border-b-0 border-b md:border-r rounded-t-3xl md:rounded-none md:rounded-l-3xl"
+          className="md:w-[40%] md:h-auto md:object-cover md:object-center md:border-b-0 border-b md:border-r rounded-t-3xl md:rounded-none md:rounded-l-3xl"
         />
 
         <div className="relative flex-1 min-w-0 flex flex-col">
