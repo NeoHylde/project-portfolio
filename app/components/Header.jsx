@@ -3,7 +3,6 @@ import Image from "next/image";
 import { assets, builtData } from "../../public/assets";
 import useThemeManager from "./themeManager";
 import { motion } from "motion/react";
-import Dropdown from "./Dropdown.jsx"
 
 const Header = () => {
   const theme = useThemeManager();
@@ -67,7 +66,19 @@ const Header = () => {
                   className="w-4"
                 />
               </a>
-              <Dropdown />
+              <a
+                href="/assets/NeoHylde-Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-10 py-3 border rounded-full border-black dark:text-black dark:bg-white flex items-center gap-2 cursor-pointer font-mono"
+              >
+                resume    
+                <img 
+                  src={assets.download_icon}
+                  alt="" 
+                  className="w-4"
+                />              
+              </a>
             </div>
 
             <div className="flex flex-col items-center gap-2 pt-10 mt-auto">
@@ -98,18 +109,30 @@ const Header = () => {
       </div>
 
       <div className="md:hidden flex flex-col sm:flex-row items-center gap-4 pt-10 mt-auto">
-            <a
-              href="#contact"
-              className="px-10 py-3 border border-white rounded-full dark:bg-[#1e1e1e] bg-[#1e1e1e] text-white flex items-center gap-2 font-mono"
-            >
-              contact
-              <img
-                src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow_white}
-                alt=""
-                className="w-4"
-              />
-            </a>
-            <Dropdown />
+        <a
+          href="#contact"
+          className="px-10 py-3 border border-white rounded-full dark:bg-[#1e1e1e] bg-[#1e1e1e] text-white flex items-center gap-2 font-mono"
+        >
+          contact
+          <img
+            src={theme === "dark" ? assets.right_arrow_white : assets.right_arrow_white}
+            alt=""
+            className="w-4"
+          />
+        </a>
+        <a
+          href="/assets/NeoHylde-Resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="px-10 py-3 border rounded-full border-black dark:text-black dark:bg-white flex items-center gap-2 cursor-pointer font-mono"
+        >
+          resume
+          <img 
+            src={assets.download_icon}
+            alt="" 
+            className="w-4"
+          />                    
+        </a>
       </div>
     </div>
   );
