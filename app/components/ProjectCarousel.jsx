@@ -59,7 +59,6 @@ const ProjectCarousel = () => {
                             poster={project.img}
                             src={project.bgVideo || ""}
                             controls
-                            muted
                             className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
                             playsInline
                             onEnded={handleVideoEnd}
