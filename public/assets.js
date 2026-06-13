@@ -111,17 +111,6 @@ export const infoList = [
   },
 ];
 
-export const toolsData = [
-  "/assets/vscode.png",
-  "/assets/postgresql.png",
-  "/assets/figma.png",
-  "/assets/git.png",
-  "/assets/github.png",
-];
-
-export const builtData = [
-  assets.nextjs,
-  assets.tailwind,
-  assets.typescript,
-  assets.threejs
+export const tools_stack = [
+  "Rust", "C/C++", "JavaScript", "Python", "Next.js", "Three.js"
 ];

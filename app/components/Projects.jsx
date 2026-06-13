@@ -9,33 +9,11 @@ const Projects = () => {
   const theme = useThemeManager();
 
   return (
-    <div id="projects" className="w-full py-10 scroll-mt-20">
-      <h2 className="text-center text-5xl font-outfit">Project Showcase</h2>
-
-      <ProjectCarousel />
-
-      <ul>
-        <li>
-          <a
-            target="_blank"
-            href="https://github.com/NeoHylde"
-            className="w-max flex items-center justify-center gap-2
-         text-gray-700 border-[0.5px] border-gray-700 rounded-full py-3 px-10 mx-auto
-         my-20 hover:bg-gray-200 dark:hover:bg-black duration-500 dark:text-white font-mono"
-          >
-            show more{" "}
-            <img
-              src={
-                theme === "dark"
-                  ? assets.right_arrow_bold_dark
-                  : assets.right_arrow_bold
-              }
-              alt="Right arrow "
-              className="w-4"
-            />
-          </a>
-        </li>
-      </ul>
+    <div className="border rounded p-4 hover:border-yellow-300 dark:bg-zinc-900">
+      <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">projects</span>
+      <div className="mt-3">
+        <ProjectCarousel />
+      </div>
     </div>
   );
 };

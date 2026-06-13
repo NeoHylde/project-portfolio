@@ -25,19 +25,13 @@ const ProjectCarousel = () => {
             });
         }
     };
-
-    const handleVideoEnd = () => {
-        if (sliderRef.current) {
-        sliderRef.current.slickNext();
-        }
-    };
     
     return (
-        <div className="w-[80%] mx-auto">
+        <div className="w-full">
             <Slider ref={sliderRef} {...settings}>
             {workData.map((project, index) => (
                 <div key={index} className="p-4">
-                    <div className="relative rounded-xl overflow-hidden shadow-md group bg-white dark:bg-zinc-900 border">
+                    <div className="relative overflow-hidden shadow-md group bg-white dark:bg-zinc-900">
                         <div className="p-4 flex justify-between items-start">
                             <div>
                                 <h2 className="font-mono font-semibold text-lg dark:text-white">{project.title}</h2>
@@ -55,13 +49,9 @@ const ProjectCarousel = () => {
                                <img src={"/assets/github.png"} className="w-5 sm:w-7"/>
                             </a>
                         </div>
-                        <video
-                            poster={project.img}
-                            src={project.bgVideo || ""}
-                            controls
-                            className="w-full h-[300px] sm:h-[400px] md:h-[500px] object-cover"
-                            playsInline
-                            onEnded={handleVideoEnd}
+                        <img
+                            src={project.img}
+                            className="w-full h-[200px] sm:h-[280px] object-cover"
                         />
                     </div>
                 </div>
