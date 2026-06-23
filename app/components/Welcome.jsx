@@ -1,17 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Image from "next/image";
-import { assets, builtData } from "../../public/assets";
-import useThemeManager from "./themeManager";
-import { motion } from "motion/react";
+import React from "react";
+import { assets } from "../../public/assets";
 
 const Welcome = () => {
-  const theme = useThemeManager();
-
   return (
     <div className="border rounded hover:border-yellow-200 duration-200 p-5 dark:bg-zinc-900">
       <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">welcome</span>
 
-      <div className="flex flex-col sm:flex-row gap-6 mt-3">
+      <div className="flex flex-row gap-4 mt-3">
         {/* Text */}
         <div className="flex flex-col gap-3 flex-1">
           <h1 className="text-2xl font-semibold">
@@ -33,12 +28,11 @@ const Welcome = () => {
           </div>
         </div>
 
-        {/* Photo */}
         <div className="shrink-0">
           <img
-            src={assets.neo_tori}
-            alt="Neo Hyldelund"
-            className="w-28 h-28 sm:w-36 sm:h-36 rounded-full object-cover"
+            src={assets.hand_icon}
+            alt=""
+            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain"
           />
         </div>
       </div>

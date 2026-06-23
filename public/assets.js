@@ -44,7 +44,8 @@ export const assets = {
   typescript: "/assets/typescript.png",
   tailwind: "/assets/tailwind.png",
   nextjs: "/assets/nextjs.png",
-  threejs: "/assets/threejs.png"
+  threejs: "/assets/threejs.png",
+  github: "/assets/github.png"
 };
 
 export const workData = [
@@ -112,5 +113,5 @@ export const infoList = [
 ];
 
 export const tools_stack = [
-  "Rust", "C/C++", "JavaScript", "Python", "Next.js", "Three.js"
+  "Rust", "C/C++", "JavaScript", "Python", "Next.js", "SQL", "Three.js", "Typescript", "Git", "JIRA"
 ];
