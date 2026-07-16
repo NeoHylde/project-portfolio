@@ -13,13 +13,10 @@ const Welcome = () => {
             Hi, I'm Neo Hyldelund.
           </h1>
           <p className="text-sm text-gray-400 leading-relaxed">
-            A full-stack developer focused on building tomorrow's solutions. I've worked
-            across startups, consultancies, and corporations — often as the bridge between
-            designers and engineers.
+            I'm a full-stack/embedded developer. My interests in projects span from automation tools, async programming, to simple games. I'm always up to new challenges and experiences. 
           </p>
           <p className="text-sm text-gray-400 leading-relaxed">
-            Have a project in mind, want to collaborate, or just want to say hello?
-            I'd love to hear from you.
+            See contact below, feel free to contact any time.
           </p>
 
           {/* Contact details slot */}
@@ -28,11 +25,11 @@ const Welcome = () => {
           </div>
         </div>
 
-        <div className="shrink-0">
+        <div className="shrink-0 ">
           <img
-            src={assets.hand_icon}
+            src={assets.neo_tori}
             alt=""
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain"
+            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain rounded-4xl"
           />
         </div>
       </div>

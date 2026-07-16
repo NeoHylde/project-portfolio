@@ -1,19 +1,11 @@
 export const assets = {
   neo_tori: "/assets/neo-tori.png",
-  neo_golf: "/assets/neo-golf.PNG",
-  maggie: "/assets/maggie.png",
-  user_image: "/assets/user-image.png",
   code_icon: "/assets/code-icon.png",
   code_icon_dark: "/assets/code-icon-dark.png",
   edu_icon: "/assets/edu-icon.png",
   edu_icon_dark: "/assets/edu-icon-dark.png",
   project_icon: "/assets/project-icon.png",
   project_icon_dark: "/assets/project-icon-dark.png",
-  vscode: "/assets/vscode.png",
-  firebase: "/assets/firebase.png",
-  figma: "/assets/figma.png",
-  git: "/assets/git.png",
-  mongodb: "/assets/mongodb.png",
   right_arrow_white: "/assets/right-arrow-white.png",
   logo: "/assets/logo.png",
   logo_dark: "/assets/logo-dark.png",
@@ -34,18 +26,8 @@ export const assets = {
   send_icon: "/assets/send-icon.png",
   right_arrow_bold: "/assets/right-arrow-bold.png",
   right_arrow_bold_dark: "/assets/right-arrow-bold-dark.png",
-  cpp: "/assets/c++.png",
-  java: "/assets/java.png",
-  python: "/assets/Python.png",
-  javascript: "/assets/JavaScript.png",
   sfu: "/assets/sfu.png",
-  gradient_bg: "/assets/gradient-bg.png",
-  gradient_bg_dark: "/assets/dark-gradient-bg.png",
-  typescript: "/assets/typescript.png",
-  tailwind: "/assets/tailwind.png",
-  nextjs: "/assets/nextjs.png",
-  threejs: "/assets/threejs.png",
-  github: "/assets/github.png"
+  github: "assets/github.png"
 };
 
 export const workData = [
