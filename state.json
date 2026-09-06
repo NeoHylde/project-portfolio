@@ -1,0 +1,49 @@
+{
+  "last_run": {
+    "timestamp": "2026-09-06T17:59:00Z",
+    "run_id": 34050213000,
+    "selected_tasks": [3, 2, 9],
+    "substitutions": {
+      "task_3": "inapplicable: 0 open issues at all -> fallback task_2",
+      "task_2": "inapplicable: 0 open issues at all -> fallback task_1",
+      "task_1": "inapplicable: 0 open issues to label -> substituted task_4 (engineering investment: added missing CI workflow)"
+    },
+    "repo_state_observed": {
+      "open_issues": 0,
+      "open_prs": 0,
+      "has_agents_md": false,
+      "has_contributing_md": false,
+      "has_ci_workflow_before_this_run": false,
+      "has_tests_before_this_run": false
+    }
+  },
+  "prs_created": [
+    {
+      "branch": "repo-assist/test-api-routes",
+      "title": "Add unit tests for API routes and a test npm script",
+      "task": 9,
+      "created_run_id": 34050213000,
+      "status": "open_draft"
+    },
+    {
+      "branch": "repo-assist/eng-ci-workflow",
+      "title": "Add CI workflow to run lint, tests, and build on push/PR",
+      "task": 4,
+      "created_run_id": 34050213000,
+      "status": "open_draft"
+    }
+  ],
+  "monthly_activity_issue": {
+    "title": "[repo-assist] Monthly Activity 2026-09",
+    "month": "2026-09",
+    "created_run_id": 34050213000
+  },
+  "notes": [
+    "Repo has zero open issues and zero open PRs as of 2026-09-06. Tasks 1/2/3 will be inapplicable until issues start appearing; keep substituting tasks 4/5/8/9/10 until then.",
+    "npm audit (as of 2026-09-06) reports 14 vulnerabilities (1 low, 3 moderate, 9 high, 1 critical) in existing deps. Not fixed this run (would need maintainer-approved dependency bumps per 'no new dependencies without discussion' guideline) - flagged in Monthly Activity issue as future work.",
+    "Build verification (`npm run build`) is blocked in the sandbox network by Google Fonts (fonts.googleapis.com) - this is a sandbox-only limitation (font fetching), not a real app bug. Documented in both PR bodies. Future runs: don't be alarmed by this again, it's expected; real CI (once the ci.yml PR merges) will confirm build success.",
+    "A test asserting the GitHub API route sends an Authorization header keyed off process.env.GITHUB_TOKEN was written then removed: this exact env var name is intercepted/redacted by the agent sandbox's secret-protection guard (AWF_ONE_SHOT_TOKENS), making it unreliable to set/read back in this environment. This is sandbox-specific, not an app bug. Avoid writing tests that set process.env.GITHUB_TOKEN (or other secret-like names) directly in future runs; use a differently-named var or dependency injection if that behavior needs testing.",
+    "Backlog cursor: no issues exist yet, so no cursor position to track for Task 1/2/3. Reset/start from oldest when issues first appear.",
+    "CI workflow (.github/workflows/ci.yml, in the eng-ci-workflow PR) uses `npm run test --if-present` specifically so it doesn't fail regardless of merge order relative to the test-api-routes PR."
+  ]
+}
