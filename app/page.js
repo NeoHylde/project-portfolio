@@ -5,7 +5,7 @@ import Welcome from "./components/Welcome";
 import Projects from "./components/Projects";
 import LocalTime from "./components/LocalTime";
 import NowPlaying from "./components/NowPlaying";
-import Contact from "./components/Contact";
+import Github from "./components/Github";
 import useThemeManager from "./components/themeManager";
 import { assets } from "../public/assets";
 
@@ -36,7 +36,7 @@ export default function Home() {
             <div className="flex-1 flex flex-col"><LocalTime /></div>
             <div className="flex-1 flex flex-col gap-3 md:contents">
               <div className="flex-1 flex flex-col"><NowPlaying /></div>
-              <div className="flex-1 flex flex-col"><Contact /></div>
+              <div className="flex-1 flex flex-col"><Github /></div>
             </div>
           </div>
           <div className="min-h-0 md:flex-[2]">

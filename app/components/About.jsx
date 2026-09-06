@@ -5,10 +5,11 @@ const About = () => {
   return (
     <div className="border rounded p-4 dark:bg-zinc-900 hover:border-yellow-200 duration-200 h-full">
       <div className="flex flex-row md:flex-col gap-6 overflow-x-auto md:overflow-visible">
-
         {/* Experience */}
         <div className="min-w-[160px] md:min-w-0 shrink-0 md:shrink">
-          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">experience</span>
+          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">
+            experience
+          </span>
           <div className="mt-2 flex flex-col gap-1">
             <p className="text-sm font-semibold">Webb Electronics</p>
             <p className="text-xs text-gray-400">Firmware / Full-stack</p>
@@ -20,9 +21,15 @@ const About = () => {
 
         {/* Education */}
         <div className="min-w-[180px] md:min-w-0 shrink-0 md:shrink">
-          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">education</span>
+          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">
+            education
+          </span>
           <div className="flex items-center gap-3 mt-2">
-            <img src={assets.sfu} alt="SFU" className="w-7 h-7 object-contain" />
+            <img
+              src={assets.sfu}
+              alt="SFU"
+              className="w-7 h-7 object-contain"
+            />
             <div>
               <p className="text-sm font-semibold">Simon Fraser University</p>
               <p className="text-xs text-gray-400">Computer Science</p>
@@ -34,7 +41,9 @@ const About = () => {
 
         {/* Tools & Stack */}
         <div className="min-w-[180px] md:min-w-0 shrink-0 md:shrink">
-          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">tools & stack</span>
+          <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">
+            tools & stack
+          </span>
           <div className="flex flex-wrap gap-2 mt-2">
             {tools_stack.map((tool, i) => (
               <span
@@ -47,6 +56,40 @@ const About = () => {
           </div>
         </div>
 
+        <div className="hidden md:block border-t dark:border-zinc-800" />
+
+        {/* Contact */}
+        <span className="text-xs font-mono text-gray-400 uppercase tracking-widest">
+          contact
+        </span>
+        <div className="flex flex-col gap-3 mt-3">
+          <a
+            href="https://github.com/NeoHylde"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-mono hover:text-yellow-400 duration-150"
+          >
+            <img src={assets.github} alt="" className="w-4 h-4" />
+            GitHub
+          </a>
+          <a
+            href="https://www.linkedin.com/in/neohylde/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-2 text-sm font-mono hover:text-yellow-400 duration-150"
+          >
+            <img src={assets.linkedin} alt="" className="w-4 h-4" />
+            LinkedIn
+          </a>
+          <a
+            href="/assets/NeoHylde-Resume.pdf"
+            download
+            className="flex items-center gap-2 text-sm font-mono hover:text-yellow-400 duration-150"
+          >
+            <img src={assets.download_icon} alt="" className="w-4 h-4" />
+            Resume
+          </a>
+        </div>
       </div>
     </div>
   );

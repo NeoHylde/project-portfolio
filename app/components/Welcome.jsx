@@ -28,8 +28,8 @@ const Welcome = () => {
         <div className="shrink-0 ">
           <img
             src={assets.neo_tori}
-            alt=""
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 object-contain rounded-4xl"
+            alt="Neo Hyldelund"
+            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-4xl"
           />
         </div>
       </div>
