@@ -44,7 +44,9 @@ timeout-minutes: 60
 
 permissions: read-all
 
-engine: claude
+engine:
+  id: claude
+  model: claude-haiku-4.5
 
 network:
   allowed:
