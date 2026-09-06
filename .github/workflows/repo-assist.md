@@ -14,7 +14,7 @@ description: |
   Always polite, constructive, and mindful of the project's goals.
 
 on:
-  schedule: every day
+  schedule: daily
   workflow_dispatch:
     inputs:
       command:
@@ -44,9 +44,7 @@ timeout-minutes: 60
 
 permissions: read-all
 
-engine:
-  id: claude
-  model: claude-sonnet-4-5-20250929
+engine: claude
 
 network:
   allowed:
@@ -106,6 +104,9 @@ safe-outputs:
     allowed: [bug, enhancement, "help wanted", "good first issue", "spam", "off topic", documentation, question, duplicate, wontfix, "needs triage", "needs investigation", "breaking change", performance, security, refactor]
     max: 5
     target: "*" 
+
+concurrency:
+  job-discriminator: "${{ github.run_id }}"
 
 steps:
   - name: Fetch repo data for task weighting
