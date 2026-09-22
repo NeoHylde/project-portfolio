@@ -1,49 +1,37 @@
 {
   "last_run": {
-    "timestamp": "2026-09-06T17:59:00Z",
-    "run_id": 34050213000,
-    "selected_tasks": [3, 2, 9],
+    "timestamp": "2026-09-22T19:08:00Z",
+    "run_id": 35770840432,
+    "selected_tasks": [4, 2, 3],
     "substitutions": {
-      "task_3": "inapplicable: 0 open issues at all -> fallback task_2",
-      "task_2": "inapplicable: 0 open issues at all -> fallback task_1",
-      "task_1": "inapplicable: 0 open issues to label -> substituted task_4 (engineering investment: added missing CI workflow)"
+      "task_2": "inapplicable: all open issues are Repo Assist's own artifacts (now resolved via PRs) or automated [aw] framework issues (#9, #20) requiring no repo-content action -> fallback task_1 also inapplicable (0 unlabelled issues) -> extra effort put into task_3/task_4 instead"
     },
     "repo_state_observed": {
-      "open_issues": 0,
-      "open_prs": 0,
-      "has_agents_md": false,
-      "has_contributing_md": false,
-      "has_ci_workflow_before_this_run": false,
-      "has_tests_before_this_run": false
+      "open_issues": 7,
+      "open_prs_before_run": 0,
+      "issues_breakdown": "#3/#6/#7/#8 = Repo Assist's own stalled fix proposals (branches existed, no real PR due to past Actions permission blocks); #4 = Monthly Activity issue; #9 = [aw] Detection Runs (framework-managed, no action); #20 = [aw] Repo Assist failed (framework auto-issue for a prior transient Anthropic auth failure, now resolved)"
     }
   },
-  "prs_created": [
-    {
-      "branch": "repo-assist/test-api-routes",
-      "title": "Add unit tests for API routes and a test npm script",
-      "task": 9,
-      "created_run_id": 34050213000,
-      "status": "open_draft"
-    },
-    {
-      "branch": "repo-assist/eng-ci-workflow",
-      "title": "Add CI workflow to run lint, tests, and build on push/PR",
-      "task": 4,
-      "created_run_id": 34050213000,
-      "status": "open_draft"
-    }
+  "prs_created_this_run": [
+    {"branch": "repo-assist/fix-issue-6-carousel-video", "title": "Optimize carousel video element remounting", "closes_issue": 6, "task": 3},
+    {"branch": "repo-assist/fix-issue-7-timeago-util", "title": "Extract and test timeAgo utility function", "closes_issue": 7, "task": 3, "note": "also fixed a latent bug: unquoted test glob in package.json silently dropped other test suites once a 1-level-deep test file existed"},
+    {"branch": "repo-assist/fix-issue-8-module-type", "title": "Fix MODULE_TYPELESS_PACKAGE_JSON warning in tests", "closes_issue": 8, "task": 3},
+    {"branch": "repo-assist/eng-ci-workflow", "title": "Add CI workflow to run lint, tests, and build on push/PR", "closes_issue": 3, "task": 4}
   ],
   "monthly_activity_issue": {
+    "number": 4,
     "title": "[repo-assist] Monthly Activity 2026-09",
     "month": "2026-09",
-    "created_run_id": 34050213000
+    "last_updated_run_id": 35770840432
   },
   "notes": [
-    "Repo has zero open issues and zero open PRs as of 2026-09-06. Tasks 1/2/3 will be inapplicable until issues start appearing; keep substituting tasks 4/5/8/9/10 until then.",
-    "npm audit (as of 2026-09-06) reports 14 vulnerabilities (1 low, 3 moderate, 9 high, 1 critical) in existing deps. Not fixed this run (would need maintainer-approved dependency bumps per 'no new dependencies without discussion' guideline) - flagged in Monthly Activity issue as future work.",
-    "Build verification (`npm run build`) is blocked in the sandbox network by Google Fonts (fonts.googleapis.com) - this is a sandbox-only limitation (font fetching), not a real app bug. Documented in both PR bodies. Future runs: don't be alarmed by this again, it's expected; real CI (once the ci.yml PR merges) will confirm build success.",
-    "A test asserting the GitHub API route sends an Authorization header keyed off process.env.GITHUB_TOKEN was written then removed: this exact env var name is intercepted/redacted by the agent sandbox's secret-protection guard (AWF_ONE_SHOT_TOKENS), making it unreliable to set/read back in this environment. This is sandbox-specific, not an app bug. Avoid writing tests that set process.env.GITHUB_TOKEN (or other secret-like names) directly in future runs; use a differently-named var or dependency injection if that behavior needs testing.",
-    "Backlog cursor: no issues exist yet, so no cursor position to track for Task 1/2/3. Reset/start from oldest when issues first appear.",
-    "CI workflow (.github/workflows/ci.yml, in the eng-ci-workflow PR) uses `npm run test --if-present` specifically so it doesn't fail regardless of merge order relative to the test-api-routes PR."
+    "2026-09-22: All 4 stalled fix branches from issues #3/#6/#7/#8 (created 2026-09-06/07/08) were still valid against current master (none of their changes had landed) — re-verified and re-implemented fresh on new branches, then successfully created real PRs via the create_pull_request safe-output tool. Previous runs were blocked by 'GitHub Actions not permitted to create/approve PRs' and 'protected files' (package.json, workflow files); that blocker is gone now that create_pull_request safe-output tool works. FOLLOW UP: check next run whether maintainer merged/reviewed these 4 PRs (branches: repo-assist/eng-ci-workflow, repo-assist/fix-issue-6-carousel-video, repo-assist/fix-issue-7-timeago-util, repo-assist/fix-issue-8-module-type). If merged, close the corresponding source issues (#3/#6/#7/#8) if not auto-closed by 'Closes #N'.",
+    "2026-09-22: Discovered a real latent bug while re-doing the timeAgo test PR: package.json's test script `node --test app/**/*.test.js` (unquoted) only worked by accident. Bash without globstar treats `**` as a single `*` (can't cross `/`); since no file used to match the resulting one-level pattern app/*/*.test.js, bash left the glob unexpanded and Node's own recursive matcher ran it correctly. Adding app/utils/timeAgo.test.js (exactly one level deep) made bash match and pass only that literal filename to Node, silently dropping the two existing app/api/**/*.test.js suites while npm test kept reporting green. Fixed by quoting the glob: `node --test 'app/**/*.test.js'`. Worth double-checking in a future run that this quoting survives merge (in case #7's PR is edited/rebased).",
+    "2026-09-22: Issue #9 ('[aw] Detection Runs') and #20 ('[aw] Repo Assist failed') are auto-managed by the gh-aw framework itself, not real repo content issues. #9 explicitly says 'No action to take - Do not assign to an agent' and 'Do not close this issue manually' - always skip it in Task 1/2/3 triage. #20 was created by a prior run's transient Anthropic API 401 (credential blip, not a real code bug) - this run authenticated fine, so flagged it in the Monthly Activity issue as something the maintainer can close. If #20 recurs across multiple runs, that would indicate a real ongoing credential problem worth investigating further; a one-off shouldn't be treated as a code issue.",
+    "npm audit (as of 2026-09-22, after npm ci) reports 14 vulnerabilities: 1 low, 3 moderate, 8 high, 2 critical (severity mix has shifted slightly from the 2026-09-06 baseline of 1/3/9/1). Still not fixed - would need maintainer-approved dependency bumps per 'no new dependencies without discussion' guideline. Flagged in Monthly Activity issue as future work each run.",
+    "Build verification (`npm run build`) is blocked in the sandbox network by Google Fonts (fonts.googleapis.com) - this is a sandbox-only limitation (font fetching), not a real app bug. Expected on every run; don't be alarmed. Once the CI workflow PR (repo-assist/eng-ci-workflow) merges, real CI will confirm build success with normal network access.",
+    "Do not set process.env.GITHUB_TOKEN (or other secret-like env var names) directly in tests - the agent sandbox's secret-protection guard intercepts/redacts it, making such tests unreliable in this environment specifically (not an app bug).",
+    "AGENTS.md and CONTRIBUTING.md do not exist in this repo as of 2026-09-22 - nothing to read before starting work; re-check occasionally in case a maintainer adds one.",
+    "Backlog cursor for Task 1/2/3: as of 2026-09-22, all 7 open issues have been reviewed (#3,4,6,7,8,9,20). Real content issues #3/#6/#7/#8 now each have a corresponding PR. Next run: check PR status first: if merged, no further action on those issues; if still open, do NOT recreate duplicate PRs for the same branches - check the PR list before doing Task 3 fixes."
   ]
 }
