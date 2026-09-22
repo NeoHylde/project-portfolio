@@ -46,7 +46,7 @@ permissions: read-all
 
 engine:
   id: claude
-  model: claude-haiku-4.5
+  model: claude-sonnet-5
 
 network:
   allowed:

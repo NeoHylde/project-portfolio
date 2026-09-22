@@ -13,10 +13,10 @@ const Welcome = () => {
             Hi, I'm Neo Hyldelund.
           </h1>
           <p className="text-sm text-gray-400 leading-relaxed">
-            I'm a full-stack/embedded developer. My interests in projects span from automation tools, async programming, to simple games. I'm always up to new challenges and experiences. 
+            I'm a full-stack/embedded developer and computer science student. Travel, padel, and outdoors enthusiast. 
           </p>
           <p className="text-sm text-gray-400 leading-relaxed">
-            See contact below, feel free to contact any time.
+           I'm always up to new challenges and experiences. See contact below, feel free to contact any time.
           </p>
 
           {/* Contact details slot */}

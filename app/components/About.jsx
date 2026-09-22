@@ -11,9 +11,14 @@ const About = () => {
             experience
           </span>
           <div className="mt-2 flex flex-col gap-1">
-            <p className="text-sm font-semibold">Webb Electronics</p>
-            <p className="text-xs text-gray-400">Firmware / Full-stack</p>
+            <p className="text-sm">Webb Electronics</p>
+            <p className="text-xs text-gray-400">Firmware / Software Developer</p>
             <p className="text-xs text-gray-500">Sep 2025 – May 2026</p>
+          </div>
+          <div className="mt-2 flex flex-col gap-1">
+            <p className="text-sm">Lumenary AI</p>
+            <p className="text-xs text-gray-400">Software Developer</p>
+            <p className="text-xs text-gray-500">Aug 2026 - Now</p>
           </div>
         </div>
 
