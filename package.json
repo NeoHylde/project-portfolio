@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test": "node --test app/**/*.test.js"
+    "test": "node --test 'app/**/*.test.js'"
   },
   "dependencies": {
     "@react-three/drei": "^10.6.1",

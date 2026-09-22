@@ -1,22 +1,7 @@
 "use client";
 import { useEffect, useState } from "react";
 import { assets } from "../../public/assets";
-
-function timeAgo(iso) {
-  const seconds = Math.floor((Date.now() - new Date(iso).getTime()) / 1000);
-  const units = [
-    ["year", 31536000],
-    ["month", 2592000],
-    ["day", 86400],
-    ["hour", 3600],
-    ["minute", 60],
-  ];
-  for (const [name, secs] of units) {
-    const value = Math.floor(seconds / secs);
-    if (value >= 1) return `${value} ${name}${value > 1 ? "s" : ""} ago`;
-  }
-  return "just now";
-}
+import { timeAgo } from "../utils/timeAgo";
 
 export default function Github() {
   const [push, setPush] = useState(undefined);
