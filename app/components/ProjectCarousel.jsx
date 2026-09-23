@@ -1,14 +1,15 @@
 "use client";
 import { useState } from "react";
 import { workData } from "../../public/assets";
+import { nextIndex, prevIndex } from "../utils/carouselIndex";
 
 const ProjectCarousel = () => {
   const [index, setIndex] = useState(0);
   const total = workData.length;
   const project = workData[index];
 
-  const prev = () => setIndex((index - 1 + total) % total);
-  const next = () => setIndex((index + 1) % total);
+  const prev = () => setIndex((i) => prevIndex(i, total));
+  const next = () => setIndex((i) => nextIndex(i, total));
 
   return (
     <div className="flex flex-col h-full">
