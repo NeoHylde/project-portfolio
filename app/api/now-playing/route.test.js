@@ -84,6 +84,39 @@ describe("GET /api/now-playing", () => {
     });
   });
 
+  test("defaults a missing album or artist instead of throwing", async () => {
+    process.env.LASTFM_API_KEY = "key";
+    process.env.LASTFM_USERNAME = "user";
+    globalThis.fetch = async () => ({
+      ok: true,
+      json: async () => ({
+        recenttracks: {
+          track: {
+            name: "Untitled Track",
+            "@attr": { nowplaying: "true" },
+            url: "https://last.fm/untitled",
+          },
+        },
+      }),
+    });
+
+    const res = await GET();
+    const body = await res.json();
+
+    assert.deepEqual(body, {
+      tracks: [
+        {
+          name: "Untitled Track",
+          artist: "",
+          album: null,
+          image: null,
+          nowPlaying: true,
+          url: "https://last.fm/untitled",
+        },
+      ],
+    });
+  });
+
   test("maps a list of tracks and defaults a missing image to null", async () => {
     process.env.LASTFM_API_KEY = "key";
     process.env.LASTFM_USERNAME = "user";

@@ -20,8 +20,8 @@ export async function GET() {
 
   const tracks = (Array.isArray(raw) ? raw : [raw]).map((track) => ({
     name: track.name,
-    artist: track.artist["#text"],
-    album: track.album["#text"],
+    artist: track.artist?.["#text"] ?? "",
+    album: track.album?.["#text"] ?? null,
     image: track.image?.[2]?.["#text"] || null,
     nowPlaying: track["@attr"]?.nowplaying === "true",
     url: track.url,
