@@ -1,39 +1,36 @@
 {
   "last_run": {
-    "timestamp": "2026-09-24T00:00:00Z",
-    "run_id": 35988543859,
-    "selected_tasks": [2, 5, 10],
+    "timestamp": "2026-09-25T10:51:00Z",
+    "run_id": 36125533437,
+    "selected_tasks": [2, 4, 10],
     "substitutions": {
-      "task_2": "inapplicable: all open issues already have an accurate, up-to-date Repo Assist comment (or are framework-managed) with no new human activity since -> fallback task_1 also inapplicable (0 unlabelled issues) -> extra effort put into task_5/task_10 instead"
+      "task_2": "inapplicable again: all open issues already have an accurate, up-to-date Repo Assist comment (or are framework-managed) with no new human activity since -> fallback task_1 also inapplicable (0 unlabelled issues) -> extra effort put into task_4/task_10 instead"
     },
     "repo_state_observed": {
-      "open_issues": 13,
+      "open_issues": 15,
       "open_prs": 0,
-      "issues_breakdown": "#3/#6/#7/#8 = stalled fix proposals with accurate comments; #4 = Monthly Activity issue; #9 = [aw] Detection Runs (framework, no action); #20 = [aw] Repo Assist failed (framework, one-off auth blip, safe for maintainer to close); #21/#22/#23/#24 = duplicate-labelled fallback patches for #6/#7/#8/#3; #25/#26 = newer protected-file fallback issues (audit fix, carousel index util), not yet duplicate-labelled, still need manual PR creation"
+      "closed_prs": 2,
+      "issues_breakdown": "#3/#6/#7/#8 = stalled fix proposals with accurate comments; #4 = Monthly Activity issue; #9 = [aw] Detection Runs (framework, no action); #20 = [aw] Repo Assist failed (framework, one-off auth blip, safe for maintainer to close); #21/#22/#23/#24 = duplicate-labelled fallback patches for #6/#7/#8/#3; #25/#26 = fallback patch issues (audit fix, carousel index util); #27 = fallback patch issue (now-playing fix, confirmed NOT a protected file yet still bounced -> strengthens the case that the Actions PR-creation setting itself is the blocker, not just file protection); #28 = next-version-bump proposal issue, awaiting maintainer sign-off"
     }
   },
-  "correction_applied_this_run": {
-    "what": "2026-09-22 run (35770840432) memory claimed 4 real PRs were created; they were actually all fallback issues (#21-24). This was already corrected live on GitHub by the 2026-09-23 run (35848529705) but not yet in this memory file. Corrected now.",
-    "lesson": "create_pull_request returning {result: success} means the safe-output call succeeded, not that a real PR (vs. a fallback issue) was created. Verify with list_pull_requests when it matters for memory accuracy."
-  },
   "deliverables_this_run": [
-    {"type": "pr_attempt", "branch": "repo-assist/fix-nowplaying-missing-fields", "title": "Guard now-playing route against missing album/artist fields", "task": 5, "note": "does not touch protected files, so may actually land as a real PR unlike the CI/package.json fixes - verify next run via list_pull_requests", "status": "unknown - check next run"},
-    {"type": "issue_proposal", "title": "Plan: bump next 15.3.8 -> 15.5.26 to resolve remaining npm audit findings", "task": 10, "note": "follow-up to issue #25's deferred postcss/sharp findings; proposal only, no code change, needs maintainer sign-off since it's a protected-file dependency bump"}
+    {"type": "pr_attempt", "branch": "repo-assist/eng-dependabot-config-20260925", "title": "Add Dependabot config for npm and GitHub Actions updates", "task": 4, "note": "new .github/dependabot.yml, doesn't touch package.json/package-lock.json/.github/workflows - a clean test of whether the Actions setting (not file protection) is the real blocker", "status": "unknown - check next run via list_pull_requests"},
+    {"type": "pr_attempt", "branch": "repo-assist/eng-seo-description-20260925", "title": "Fill in empty SEO/social meta description", "task": 10, "note": "one-line fix to app/layout.js metadata.description, verified npm test 10/10 and npm run lint clean after npm install", "status": "unknown - check next run via list_pull_requests"}
   ],
   "monthly_activity_issue": {
     "number": 4,
     "title": "[repo-assist] Monthly Activity 2026-09",
     "month": "2026-09",
-    "last_updated_run_id": 35988543859
+    "last_updated_run_id": 36125533437
   },
   "notes": [
-    "2026-09-24: Corrected this memory's prior inaccurate claim of '4 PRs created' on 2026-09-22 - they were fallback issues (#21-24), already fixed live on GitHub 2026-09-23 but not in memory until now.",
-    "2026-09-24: Task 2 was inapplicable again - all real-content issues already have accurate, unanswered-since comments. Don't keep re-checking this every single run without also checking whether NEW issues appeared since the last run's cursor - the check that matters is 'any new issue or new comment activity since last review', not just 're-read the same 4 issues again'.",
-    "2026-09-24: app/api/now-playing/route.js had the same class of bug already fixed in app/api/github/route.js (missing optional chaining on an API field that can be absent) - worth scanning sibling API routes for the same pattern preemptively in a future run rather than waiting for it to be reported.",
-    "2026-09-24: npm audit as of this run still 14 total (1 low/3 moderate/8 high/2 critical) - unchanged from 2026-09-22/23 baseline since #25's lockfile-only fix hasn't landed on master yet. 10 of the 14 clear via plain `npm audit fix` (already what #25 does); the remaining 3 (postcss/sharp, transitively via next) need next 15.3.8->15.5.26 - proposed as a new issue this run rather than implemented directly.",
+    "2026-09-25: Task 2 inapplicable for the second run in a row - #3/#6/#7/#8 have zero new activity since 2026-09-23. Confirmed by checking updated_at timestamps directly rather than re-reading full comment threads - a cheap way to rule out new human activity before deciding Task 2 is a no-op.",
+    "2026-09-25: Confirmed via issue #27 (now-playing fix branch, NOT a protected file) that fallback-to-issue still happens even for plain .js file changes - this is evidence the root cause is the repo-level 'Allow GitHub Actions to create and approve pull requests' setting itself, not merely protected-file restrictions on package.json/package-lock.json/.github/workflows. This run's two new attempts (dependabot config, SEO description) are both similarly unprotected, deliberately chosen as a further test of this theory - check list_pull_requests next run and update this note with the actual outcome.",
+    "2026-09-25: npm audit still 14 total (1 low/3 moderate/8 high/2 critical), unchanged from the 2026-09-22 baseline - #25's lockfile-only fix still hasn't landed on master. 11 of 14 clear via plain `npm audit fix`; the remaining 3 (next/postcss/sharp) need the next 15.3.8->15.5.26 bump proposed in #28. Confirmed 15.5.26 is a real published release (not invented) and that npm's overall 'latest' for next is now 16.3.6 (a new major) - the #28 proposal is specifically the in-range 15.x patch bump, don't let a future run conflate the two.",
+    "2026-09-25: npm install works fine in this sandbox (416 packages, ~15s) and npm run lint/npm test both run cleanly afterward - only `npm run build` is blocked, specifically by fonts.googleapis.com (next/font/google), not by npm install or npm registry access in general.",
+    "2026-09-25: Verified all 7 pre-existing stalled branches (#21-27's underlying branches) still apply cleanly against current origin/master with zero divergence - the backlog isn't rotting from merge conflicts, just from the maintainer not having manually created the PRs yet.",
     "Issue #9 ('[aw] Detection Runs') and #20 ('[aw] Repo Assist failed') remain framework-managed / no-action - continue to always skip in Task 1/2/3 triage; #20 is safe for a maintainer to close but Repo Assist shouldn't close it itself.",
-    "Build verification (`npm run build`) is still blocked in the sandbox network by Google Fonts (fonts.googleapis.com) - sandbox-only limitation, not a real app bug, expected every run.",
-    "AGENTS.md and CONTRIBUTING.md still do not exist in this repo as of 2026-09-24.",
-    "Backlog cursor: as of 2026-09-24, all 13 open issues reviewed (#3,4,6,7,8,9,20,21,22,23,24,25,26). Zero open PRs confirmed via list_pull_requests. Next run: check list_pull_requests first for repo-assist/fix-nowplaying-missing-fields before doing more Task 5 work; check #25/#26 branch status before recreating."
+    "AGENTS.md and CONTRIBUTING.md still do not exist in this repo as of 2026-09-25.",
+    "Backlog cursor: as of 2026-09-25, all 15 open issues reviewed (#3,4,6,7,8,9,20,21,22,23,24,25,26,27,28). Zero open PRs confirmed via list_pull_requests (2 total, #1 and #5, both closed). Next run: check list_pull_requests first for both of this run's branches before doing more Task 4/10 work of this shape."
   ]
 }
