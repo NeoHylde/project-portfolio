@@ -58,7 +58,7 @@ export const workData = [
     title: "Hands-Off",
     description: "Python, Whisper, Porcupine, Spotipy",
     bgVideo: "/assets/hands-off-demo.mp4",
-    img: "assets/hands-off-img.png",
+    img: "/assets/hands-off-img.png",
     link: "https://github.com/NeoHylde/hands-off",
   },
   {
