@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function NowPlaying() {
   const [tracks, setTracks] = useState(undefined);
@@ -51,9 +52,11 @@ export default function NowPlaying() {
               className={`flex items-center gap-3 group ${i > 0 ? "opacity-50 hover:opacity-80" : ""} duration-150`}
             >
               {track.image ? (
-                <img
+                <Image
                   src={track.image}
                   alt={track.album}
+                  width={i === 0 ? 40 : 28}
+                  height={i === 0 ? 40 : 28}
                   className={`rounded shrink-0 object-cover ${i === 0 ? "w-10 h-10" : "w-7 h-7"}`}
                 />
               ) : (
