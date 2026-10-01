@@ -1,39 +1,40 @@
 {
   "last_run": {
-    "timestamp": "2026-09-27T00:00:00Z",
-    "run_id": 36314157287,
-    "selected_tasks": [2, 5, 3],
+    "timestamp": "2026-10-01T00:00:00Z",
+    "run_id": 36858683501,
+    "selected_tasks": [8, 1, 10],
     "substitutions": {
-      "task_2": "inapplicable: #3/#6/#7/#8 unchanged updated_at since 2026-09-23, identical to last 3 runs; no unlabelled issues either (0) so Task 1 fallback also inapplicable -> effort redirected to Task 3 and Task 5"
+      "task_1": "inapplicable: 0 unlabelled issues per task_selection.json; fallback task_2 also inapplicable: list_issues across all 23 open issues shows every commenter is the github-actions bot, zero human activity anywhere -> effort redirected to Task 8 and Task 10"
     },
     "repo_state_observed": {
-      "open_issues": 18,
+      "open_issues": 23,
       "open_prs": 0,
       "closed_prs": 2,
-      "new_since_last_run": "#31 = [repo-assist] Use next/image... (confirmed: last run's create_pull_request bounced to a fallback issue again, NOT a real PR - 7th consecutive confirmation)"
+      "new_since_last_recorded_run": "#34 (desktop.ini removal, from the un-recorded 2026-09-28 run), #35 (CONTRIBUTING.md, same run), #36 and #37 ([aw] Repo Assist failed - Anthropic API usage-limit exhaustion, 2026-09-29 and 2026-09-30, resolved as of 2026-10-01)"
     }
   },
   "deliverables_this_run": [
-    {"type": "pr_attempt", "branch": "repo-assist/fix-gitignore-public-tracking-20260927", "title": "Remove /public/ from .gitignore", "task": 5, "note": ".gitignore had a stray /public/ line (added in an earlier repo-assist commit dated 2026-09-05, commit 4ee8ffd) silently untracking the entire public/ directory (47 tracked files unaffected, but future additions would silently fail to be tracked without git add -f). Single-line fix, zero runtime risk. npm run lint clean, npm test 10/10 pass.", "status": "unknown - check next run via list_pull_requests, likely lands as a fallback issue like every attempt since 2026-09-22"},
-    {"type": "pr_attempt", "branch": "repo-assist/fix-broken-linkedin-icon-20260927", "title": "Fix broken LinkedIn icon in About section", "task": 3, "note": "public/assets.js had linkedin: 'assets/linkedin.png' but no such file exists in public/assets/ (verified against full directory listing) - broken image icon in About.jsx contact list. Fixed by using react-icons' FaLinkedin (already an installed, unused dependency) instead, removed dead assets.js entry. Found during Task 3 investigation, not from a labelled issue. npm run lint clean, npm test 10/10 pass.", "status": "unknown - check next run via list_pull_requests"}
+    {"type": "pr_attempt", "branch": "repo-assist/perf-nowplaying-nextimage-20261001", "title": "Use next/image for NowPlaying track art", "task": 8, "note": "Issue #31 explicitly deferred NowPlaying.jsx's remote Last.fm track art to a follow-up needing images.remotePatterns. Added that config (host lastfm.freetls.fastly.net) and switched NowPlaying.jsx from <img> to next/image with fixed 40x40/28x28 dimensions. npm run lint clean, npm test 10/10 pass.", "status": "unknown - check next run via list_pull_requests, likely lands as a fallback issue like every attempt since 2026-09-22"},
+    {"type": "pr_attempt", "branch": "repo-assist/add-agents-md-20261001", "title": "Add AGENTS.md", "task": 10, "note": "AGENTS.md did not exist; README.md is still unmodified create-next-app boilerplate. Added AGENTS.md documenting actual project layout, commands (incl. the build sandbox limitation), and conventions in use. Docs only, no code change.", "status": "unknown - check next run via list_pull_requests"}
   ],
   "monthly_activity_issue": {
-    "number": 4,
-    "title": "[repo-assist] Monthly Activity 2026-09",
-    "month": "2026-09",
-    "last_updated_run_id": 36314157287
+    "number": null,
+    "title": "[repo-assist] Monthly Activity 2026-10",
+    "month": "2026-10",
+    "last_updated_run_id": 36858683501,
+    "note": "Created this run without a temporary_id, so the actual issue number wasn't captured from the tool result. Next run: find it via list_issues (title search) and fill in this number. Issue #4 (September) was closed this run."
   },
   "notes": [
-    "2026-09-27: Confirmed via list_pull_requests(state=all) that last run's next/image perf attempt (repo-assist/perf-nextimage-20260926) landed as fallback issue #31, NOT a real PR - 7th consecutive confirmation the Actions PR-creation setting (not file protection) is the root blocker for non-protected files too, since it didn't touch package.json/package-lock.json/.github/workflows.",
-    "2026-09-27: Task 2 inapplicable again - #3/#6/#7/#8 updated_at identical to 2026-09-23 for the 4th run running. This repo has zero human-authored issues; don't re-derive this at length, just diff updated_at against memory and move on.",
-    "2026-09-27: Task 3 found a genuine NEW bug via codebase investigation (not from a labelled issue): public/assets.js's linkedin entry pointed at a non-existent file (public/assets/linkedin.png was never present - confirmed via full `ls public/assets/`). Fixed using react-icons (already installed, unused elsewhere) instead of needing a new image asset. This is a good template for future runs: when Task 3 has no labelled bug/help-wanted/good-first-issue to work from, grep assets.js references against the actual public/assets/ directory listing for other silently-broken image paths - haven't yet checked github.png reference style (uses 'assets/github.png' without leading slash, works only because there's a single root route - lower priority, deliberately left alone this run to keep the fix minimal per 'don't fix unrelated things').",
-    "2026-09-27: Task 5 found .gitignore had `/public/` appended in commit 4ee8ffd ('repo-assist', dated 2026-09-05) - this ignores the ENTIRE public/ directory going forward. The 47 already-tracked files are unaffected (git doesn't retroactively untrack), but any new asset added under public/ from now on would silently fail to be git-added without -f. This was NOT caught by any prior run's review - good reminder to periodically diff .gitignore against tracked-but-should-be-tracked directories.",
-    "2026-09-27: public/assets/desktop.ini is a tracked Windows Explorer junk file (sets a custom icon for NeoHylde-Resume.pdf) - noted but deliberately NOT removed this run to keep the .gitignore fix single-concern; a good small Task 5 candidate for a future run (delete the file + add desktop.ini to .gitignore).",
-    "2026-09-26: npm run build is still unverifiable in this sandbox - fails purely on next/font/google needing to reach fonts.googleapis.com (no network egress here). npm install/lint/test all work fine. Always document this honestly in the Test Status section rather than skip verification silently. Confirmed again 2026-09-27 (no build attempted this run since neither change touches font loading, but the sandbox limitation is structural and applies to any future build attempt).",
-    "2026-09-25: npm audit still 14 total (1 low/3 moderate/8 high/2 critical) as of 2026-09-26, unchanged from the 2026-09-22 baseline - #25's lockfile-only fix still hasn't landed on master. 11 of 14 clear via plain `npm audit fix`; the remaining 3 (next/postcss/sharp) need the next 15.3.8->15.5.26 bump proposed in #28. Not re-checked 2026-09-27.",
-    "2026-09-25: Verified all pre-existing stalled branches still applied cleanly against origin/master as of 2026-09-25 - the backlog isn't rotting from merge conflicts, just from the maintainer not having manually created the PRs yet. Not re-verified since.",
-    "Issue #9 ('[aw] Detection Runs') and #20 ('[aw] Repo Assist failed') remain framework-managed / no-action - continue to always skip in Task 1/2/3 triage; #20 is safe for a maintainer to close but Repo Assist shouldn't close it itself.",
-    "AGENTS.md and CONTRIBUTING.md still do not exist in this repo as of 2026-09-27.",
-    "Backlog cursor: as of 2026-09-27, all 18 open issues reviewed (#3,4,6,7,8,9,20,21,22,23,24,25,26,27,28,29,30,31). Zero open PRs confirmed via list_pull_requests (2 total, #1 and #5, both closed). Next run: check list_pull_requests first for repo-assist/fix-gitignore-public-tracking-20260927 and repo-assist/fix-broken-linkedin-icon-20260927 before doing more Task 3/5 work of this shape."
+    "2026-10-01: Reconciled a 2-run memory gap - this file was last updated 2026-09-27, but the live Monthly Activity issue #4 showed a 2026-09-28 run happened (desktop.ini removal -> fallback issue #34, CONTRIBUTING.md -> fallback issue #35) that was never backfilled here. Also found two runs (2026-09-29, 2026-09-30) failed entirely before reaching memory-read due to Anthropic API usage-limit exhaustion (issues #36, #37) - resolved as of today per the error messages' own 'regain access on 2026-10-01' text.",
+    "2026-10-01: Confirmed via direct file reads (not just issue claims) that none of the ~14 pre-existing stalled fix branches have landed on master: .gitignore still has /public/, assets.js still has the broken linkedin entry, desktop.ini still tracked, CONTRIBUTING.md still absent. Backlog remains fully valid.",
+    "2026-10-01: Task 1 inapplicable (0 unlabelled). Task 2 fallback inapplicable - list_issues with fields=[number,comments,updated_at,user] across all 23 open issues shows every commenter is github-actions; zero human-authored content anywhere in this repo, 10+ consecutive runs now. Cheap way to confirm this each run: one list_issues call with that fields filter, don't re-derive at length.",
+    "2026-10-01: Task 8 - issue #31's own PR body explicitly flagged NowPlaying.jsx's remote Last.fm images as a deliberately-deferred follow-up needing images.remotePatterns. Implemented it this run (see deliverables). Good template: when picking a new Task 8 target, check whether a prior performance PR's body already named a specific deferred follow-up before searching for something new.",
+    "2026-10-01: Task 10 - AGENTS.md added (was flagged missing since at least 2026-09-27 notes). CONTRIBUTING.md content also exists now but only on a stalled, unmerged branch (fallback issue #35) - don't recreate it.",
+    "2026-10-01: Monthly Activity issue rollover done - closed #4, created new Oct issue via create_issue WITHOUT a temporary_id, so its number is unknown from this run's tool output alone. Next run must look it up via list_issues(title contains 'Monthly Activity 2026-10') and record it here. Lesson for future Task 11 month-rollovers: pass a temporary_id to create_issue so the closing comment on the old issue (and this memory update) can link/reference the real number immediately instead of a placeholder.",
+    "2026-09-28 (backfilled from issue #4's Run History, not captured live at the time): Task 5 removed tracked desktop.ini + added to .gitignore (branch repo-assist/remove-desktop-ini-20260928) -> confirmed 2026-10-01 as fallback issue #34, not a real PR. Task 10 added CONTRIBUTING.md + linked from README (branch repo-assist/add-contributing-guide-20260928) -> confirmed 2026-10-01 as fallback issue #35.",
+    "npm run build is still unverifiable in this sandbox - fails purely on next/font/google needing to reach fonts.googleapis.com (no network egress here). npm install/lint/test all work fine. Reconfirmed 2026-10-01 (build attempted this run since AGENTS.md documents it - same failure mode as every prior check, not a regression).",
+    "npm audit still 14 total (1 low/3 moderate/8 high/2 critical) as of 2026-10-01 (fresh npm install this run) - #25's lockfile-only fix still hasn't landed on master. 11 of 14 clear via plain npm audit fix; the remaining 3 (next/postcss/sharp) need the next 15.3.8->15.5.26 bump proposed in #28.",
+    "Issue #9 ('[aw] Detection Runs') remains framework-managed / no-action per its own body text ('Do not close this issue manually') - continue to always skip in Task 1/2/3 triage. #20, #36, #37 (all '[aw] Repo Assist failed', all transient - auth blip and two API usage-limit exhaustions) are safe for a maintainer to close but Repo Assist shouldn't close them itself.",
+    "Backlog cursor: as of 2026-10-01, all 23 open issues reviewed (#3,6,7,8,9,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37). Issue #4 closed this run, new Oct issue created (number TBD - see monthly_activity_issue note). Zero open PRs confirmed via list_pull_requests (2 total, #1 and #5, both closed). Next run: check list_pull_requests first for repo-assist/perf-nowplaying-nextimage-20261001 and repo-assist/add-agents-md-20261001 before doing more Task 8/10 work of this shape, and resolve the Monthly Activity issue number via list_issues."
   ]
 }
