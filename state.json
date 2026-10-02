@@ -1,30 +1,41 @@
 {
   "last_run": {
-    "timestamp": "2026-10-01T00:00:00Z",
-    "run_id": 36858683501,
-    "selected_tasks": [8, 1, 10],
+    "timestamp": "2026-10-02T00:00:00Z",
+    "run_id": 37001302789,
+    "selected_tasks": [10, 3, 2],
     "substitutions": {
-      "task_1": "inapplicable: 0 unlabelled issues per task_selection.json; fallback task_2 also inapplicable: list_issues across all 23 open issues shows every commenter is the github-actions bot, zero human activity anywhere -> effort redirected to Task 8 and Task 10"
+      "task_3": "inapplicable: every bug/help-wanted/good-first-issue-labelled issue (#6,7,8,22,23,32,33) already has a complete, ready-to-land fix sitting in a stalled branch from a prior run. Creating another fix would duplicate my own prior work -> effort redirected into Task 10.",
+      "task_2": "inapplicable again (11th consecutive run): zero human-authored comments anywhere, double-checked #9's full comment history directly this time (all 24 comments are bot threat-detection notices, confirmed not human)."
     },
     "repo_state_observed": {
-      "open_issues": 23,
+      "open_issues": 26,
       "open_prs": 0,
       "closed_prs": 2,
-      "new_since_last_recorded_run": "#34 (desktop.ini removal, from the un-recorded 2026-09-28 run), #35 (CONTRIBUTING.md, same run), #36 and #37 ([aw] Repo Assist failed - Anthropic API usage-limit exhaustion, 2026-09-29 and 2026-09-30, resolved as of 2026-10-01)"
+      "new_since_last_recorded_run": "#38 (NowPlaying next/image fix, confirmed landed as fallback issue not real PR), #39 (AGENTS.md, same), #40 (October Monthly Activity issue, number now known)"
     }
+  },
+  "this_run": {
+    "timestamp": "2026-10-02T00:00:00Z",
+    "run_id": 37001302789,
+    "deliverable": {"type": "issue", "title": "Discuss adding jsdom/testing-library for component test coverage (LocalTime, themeManager)", "task": 10, "note": "Discussion-first proposal per project's no-new-deps-without-discussion rule; no code changes. Options laid out: happy-dom-only, jsdom+Testing Library, or Vitest."},
+    "no_pr_created_this_run": "Deliberately did not attempt a new Task 3/5 fix+PR this run - every known fixable bug already has a complete stalled-branch fix from a prior run (see Suggested Actions in issue #40), and the Actions PR-creation setting is still disabled (11 consecutive confirmations), so a new attempt would only add another near-duplicate fallback issue to an already-large backlog. Quality-over-quantity call, not an oversight."
   },
   "deliverables_this_run": [
     {"type": "pr_attempt", "branch": "repo-assist/perf-nowplaying-nextimage-20261001", "title": "Use next/image for NowPlaying track art", "task": 8, "note": "Issue #31 explicitly deferred NowPlaying.jsx's remote Last.fm track art to a follow-up needing images.remotePatterns. Added that config (host lastfm.freetls.fastly.net) and switched NowPlaying.jsx from <img> to next/image with fixed 40x40/28x28 dimensions. npm run lint clean, npm test 10/10 pass.", "status": "unknown - check next run via list_pull_requests, likely lands as a fallback issue like every attempt since 2026-09-22"},
     {"type": "pr_attempt", "branch": "repo-assist/add-agents-md-20261001", "title": "Add AGENTS.md", "task": 10, "note": "AGENTS.md did not exist; README.md is still unmodified create-next-app boilerplate. Added AGENTS.md documenting actual project layout, commands (incl. the build sandbox limitation), and conventions in use. Docs only, no code change.", "status": "unknown - check next run via list_pull_requests"}
   ],
   "monthly_activity_issue": {
-    "number": null,
+    "number": 40,
     "title": "[repo-assist] Monthly Activity 2026-10",
     "month": "2026-10",
-    "last_updated_run_id": 36858683501,
-    "note": "Created this run without a temporary_id, so the actual issue number wasn't captured from the tool result. Next run: find it via list_issues (title search) and fill in this number. Issue #4 (September) was closed this run."
+    "last_updated_run_id": 37001302789,
+    "note": "Number confirmed via list_issues on 2026-10-02. Updated this run (replace) with refreshed TBD->#38/#39 numbers, the new jsdom issue, and new run history entry."
   },
   "notes": [
+    "2026-10-02: Task 3 inapplicable - every bug/help-wanted/good-first-issue issue already has a complete stalled-branch fix from a prior run (#6/7/8 originals, #22/23/32/33 duplicates). Don't keep re-deriving this each run: check the 'Create PR manually' list in the Monthly Activity issue first - if a bug issue's number appears there, it's already fixed and waiting on the Actions PR-permission setting, not a fresh Task 3 target.",
+    "2026-10-02: Task 2 inapplicable, 11th consecutive run. Double-checked issue #9 directly this time (not just trusting the comment count) - all 24 comments are bot-generated 'Threat detection produced a warning result' notices, zero human text. Safe to keep treating #9 as pure framework noise going forward without re-checking every run.",
+    "2026-10-02: Made a deliberate choice NOT to attempt a new Task 3/4/5/8 fix+PR this run. Rationale: the Actions PR-creation setting has been confirmed disabled for 11 straight runs, and every already-identified fixable issue already has a complete patch sitting in a stalled branch + fallback issue. Producing yet another one would just add a 15th+ near-duplicate issue to an already-overloaded Suggested Actions list - pure noise, not progress. Instead used Task 10 to file something genuinely new: a discussion-first issue on jsdom/testing-library for LocalTime.jsx/themeManager.js coverage (a new-dependency decision that needs maintainer input regardless of the PR-permission blocker). If a FUTURE run has a genuinely new angle (a new issue filed by a human, or the Actions setting finally gets fixed), that changes the calculus - don't treat 'the blocker exists' as a permanent reason to never touch Task 3/4/5/8 again, just don't manufacture duplicate work in the meantime.",
+    "2026-10-02: Confirmed via direct file reads again that the backlog is still 100% unlanded: .gitignore still has /public/, desktop.ini still tracked, AGENTS.md/CONTRIBUTING.md still absent from master. No drift since 2026-10-01.",
     "2026-10-01: Reconciled a 2-run memory gap - this file was last updated 2026-09-27, but the live Monthly Activity issue #4 showed a 2026-09-28 run happened (desktop.ini removal -> fallback issue #34, CONTRIBUTING.md -> fallback issue #35) that was never backfilled here. Also found two runs (2026-09-29, 2026-09-30) failed entirely before reaching memory-read due to Anthropic API usage-limit exhaustion (issues #36, #37) - resolved as of today per the error messages' own 'regain access on 2026-10-01' text.",
     "2026-10-01: Confirmed via direct file reads (not just issue claims) that none of the ~14 pre-existing stalled fix branches have landed on master: .gitignore still has /public/, assets.js still has the broken linkedin entry, desktop.ini still tracked, CONTRIBUTING.md still absent. Backlog remains fully valid.",
     "2026-10-01: Task 1 inapplicable (0 unlabelled). Task 2 fallback inapplicable - list_issues with fields=[number,comments,updated_at,user] across all 23 open issues shows every commenter is github-actions; zero human-authored content anywhere in this repo, 10+ consecutive runs now. Cheap way to confirm this each run: one list_issues call with that fields filter, don't re-derive at length.",
