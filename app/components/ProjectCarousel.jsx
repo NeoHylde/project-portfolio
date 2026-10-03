@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Image from "next/image";
 import { workData } from "../../public/assets";
 
 const ProjectCarousel = () => {
@@ -13,10 +14,13 @@ const ProjectCarousel = () => {
   return (
     <div className="flex flex-col h-full">
       <div className="relative overflow-hidden group flex-1 min-h-0">
-        <img
+        <Image
           src={project.img}
           alt={project.title}
-          className="w-full h-full object-cover"
+          fill
+          sizes="(min-width: 768px) 60vw, 100vw"
+          className="object-cover"
+          priority={index === 0}
         />
         {project.bgVideo && (
           <video

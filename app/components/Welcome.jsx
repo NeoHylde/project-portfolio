@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { assets } from "../../public/assets";
 
 const Welcome = () => {
@@ -25,11 +26,14 @@ const Welcome = () => {
           </div>
         </div>
 
-        <div className="shrink-0 ">
-          <img
+        <div className="relative shrink-0 w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44">
+          <Image
             src={assets.neo_tori}
             alt="Neo Hyldelund"
-            className="w-20 h-20 sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-44 lg:h-44 object-cover rounded-4xl"
+            fill
+            sizes="(min-width: 1024px) 11rem, (min-width: 768px) 9rem, (min-width: 640px) 7rem, 5rem"
+            className="object-cover rounded-4xl"
+            priority
           />
         </div>
       </div>
