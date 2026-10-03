@@ -1,5 +1,6 @@
 import { assets, tools_stack } from "../../public/assets";
 import React from "react";
+import { FaLinkedin } from "react-icons/fa";
 
 const About = () => {
   return (
@@ -83,7 +84,7 @@ const About = () => {
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-mono hover:text-yellow-400 duration-150"
           >
-            <img src={assets.linkedin} alt="" className="w-4 h-4" />
+            <FaLinkedin className="w-4 h-4" />
             LinkedIn
           </a>
           <a

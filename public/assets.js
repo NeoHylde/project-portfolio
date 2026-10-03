@@ -27,8 +27,7 @@ export const assets = {
   right_arrow_bold: "/assets/right-arrow-bold.png",
   right_arrow_bold_dark: "/assets/right-arrow-bold-dark.png",
   sfu: "/assets/sfu.png",
-  github: "assets/github.png",
-  linkedin: "assets/linkedin.png"
+  github: "assets/github.png"
 };
 
 export const workData = [
